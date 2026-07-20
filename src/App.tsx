@@ -1,7 +1,8 @@
 // import { useState } from 'react'
 
-import Sec2About from './components/about/Sec2About'
-import Sec1Hero from './components/hero/Sec1Hero'
+import Sec2About from './components/app/home/Sec2About'
+import Sec1Hero from './components/app/home/Sec1Hero'
+import Sec3Skills from './components/app/home/Sec3Skills'
 // import './App.css'
 
 function App() {
