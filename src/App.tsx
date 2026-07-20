@@ -17,6 +17,10 @@ function App() {
         <Sec2About />
       </section>
 
+      <section>
+        <Sec3Skills />
+      </section>
+
     </main>
   )
 }
