@@ -14,11 +14,13 @@ import {
 } from "../../svgs/logos/logoMaps"
 
 export default function Sec3Skills() {
-
+    const test = `"w-full grid grid-cols-1 sm:grid-cols-[150px_1fr] gap-x-10 gap-3 sm:gap-y-5 items-center [&_h2,&>div]:border
+                                [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:text-(--text-h) [&_h2]:text-center sm:[&_h2]:text-end
+                                [&_svg]:w-15 [&_svg]:h-15 [&>div]:mb-5 [&>div]:flex [&>div]:flex-wrap [&>div]:flex-row [&>div]:justify-evenly [&>div]:gap-5"`
     return (
         <div className="p-4">
             {/* Section Header */}
-            <div className="flex gap-5 items-center mb-5">
+            <div className="flex gap-5 items-center mb-5 grid-cols-1">
                 <svg width={40} height={40}>
                     <use href="/icons.svg#list-alt-check" />
                 </svg>
@@ -26,11 +28,10 @@ export default function Sec3Skills() {
             </div>
 
             <div className="max-w-2xl mx-auto">
-                <div className="w-full grid grid-cols-[200px_1fr] gap-5 items-center 
-                                [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:text-(--text-h)
-                                [&_svg]:w-15 [&_svg]:h-15 [&>div]:flex [&>div]:flex-wrap [&>div]:flex-row [&>div]:gap-5"
+                <div className="skills-container"
                 >
-                        <h2>Languages:</h2>
+                    <div>
+                        <h2>Languages</h2>
                         <div>
                             {langKeys.map(lang => (
                                 <div key={lang}>
@@ -38,8 +39,10 @@ export default function Sec3Skills() {
                                 </div>
                             ))}
                         </div>
+                    </div>
 
-                        <h2>Frontend:</h2>
+                    <div>
+                        <h2>Frontend</h2>
                         <div>
                             {frontendLogoKeys.map(front => (
                                 <div key={front}>
@@ -47,8 +50,10 @@ export default function Sec3Skills() {
                                 </div>
                             ))}
                         </div>
+                    </div>
 
-                        <h2>Backend:</h2>
+                    <div>
+                        <h2>Backend</h2>
                         <div>
                             {backendLogoKeys.map(back => (
                                 <div key={back}>
@@ -56,8 +61,10 @@ export default function Sec3Skills() {
                                 </div>
                             ))}
                         </div>
+                    </div>
 
-                        <h2>Databases:</h2>
+                    <div>
+                        <h2>Databases</h2>
                         <div>
                             {databaseLogoKeys.map(db => (
                                 <div key={db}>
@@ -65,8 +72,10 @@ export default function Sec3Skills() {
                                 </div>
                             ))}
                         </div>
+                    </div>
 
-                        <h2>Tools:</h2>
+                    <div>
+                        <h2>Tools</h2>
                         <div>
                             {toolsLogoKeys.map(tool => (
                                 <div key={tool}>
@@ -74,8 +83,10 @@ export default function Sec3Skills() {
                                 </div>
                             ))}
                         </div>
+                    </div>
 
-                        <h2>Data Tools:</h2>
+                    <div>
+                        <h2>Data Tools</h2>
                         <div>
                             {dataToolsLogoKeys.map(tool => (
                                 <div key={tool}>
@@ -83,6 +94,7 @@ export default function Sec3Skills() {
                                 </div>
                             ))}
                         </div>
+                    </div>
                 </div>
             </div>
         </div>

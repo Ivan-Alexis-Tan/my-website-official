@@ -30,45 +30,47 @@ type DatabaseList = (keyof typeof databaseLogos)[]
 type ToolsList = (keyof typeof toolsLogo)[]
 type DataToolsList = (keyof typeof dataToolsLogo)[]
 
+const size = "h-15 w-15" 
+
 export const langLogos = {
-    python: mapLogo(<PythonLogo title="Python" />),
-    typescript: mapLogo(<TSLogo title="TypeScript" />),
-    javascript: mapLogo(<JSLogo title="JavaScript" />),
-    sql: mapLogo(<SqlLogo title="SQL" />),
+    python: mapLogo(<PythonLogo title="Python" className={size} />),
+    typescript: mapLogo(<TSLogo title="TypeScript" className={size} />),
+    javascript: mapLogo(<JSLogo title="JavaScript" className={size} />),
+    sql: mapLogo(<SqlLogo title="SQL" className={size} />),
 }
 
 export const frontendLogos = {
-    react: mapLogo(<ReactLogo title="React" />),
-    nextjs: mapLogo(<NextJsLogo title="Next.js" />),
-    html: mapLogo(<HtmlLogo title="HTML" />),
-    css: mapLogo(<CssLogo title="CSS" />),
+    react: mapLogo(<ReactLogo title="React" className={size} />),
+    nextjs: mapLogo(<NextJsLogo title="Next.js" className={size} />),
+    html: mapLogo(<HtmlLogo title="HTML" className={size} />),
+    css: mapLogo(<CssLogo title="CSS" className={size} />),
 }
 
 export const backendLogos = {
-    authjs: mapLogo(<NextAuthLogo title="Auth.js" />),
-    flask: mapLogo(<FlaskLogo title="Flask" />),
-    fastapi: mapLogo(<FastApiLogo title="FastAPI" /> ),
-    prisma: mapLogo(<PrismaLogo title="Prisma" />),
-    sqlalchemy: mapLogo(<SqlAlchemyLogo title="SQLAlchemy" />),
+    authjs: mapLogo(<NextAuthLogo title="Auth.js" className={size} />),
+    flask: mapLogo(<FlaskLogo title="Flask" className={size} />),
+    fastapi: mapLogo(<FastApiLogo title="FastAPI"  className={size} /> ),
+    prisma: mapLogo(<PrismaLogo title="Prisma"  className={size} />),
+    sqlalchemy: mapLogo(<SqlAlchemyLogo title="SQLAlchemy"  className={size} />),
 }
 
 export const databaseLogos = {
-    mysql: mapLogo(<MySqlLogo title="MySQL" />),
-    postgresql: mapLogo(<PostgresqlLogo title="PostgreSQL" />),
-    sqlite: mapLogo(<SqliteLogo title="SQLite" />),
+    mysql: mapLogo(<MySqlLogo title="MySQL"  className={size} />),
+    postgresql: mapLogo(<PostgresqlLogo title="PostgreSQL" className="h-10 w-30" />),
+    sqlite: mapLogo(<SqliteLogo title="SQLite"  className={size} />),
 }
 
 export const toolsLogo = {
     git: mapLogo(<GitLogo title="Git" />),
-    github: mapLogo(<GitHubLogo title="GitHub" />),
-    vercel: mapLogo(<VercelLogo title="Vercel" />),
-    vscode: mapLogo(<VsCodeLogo title="VS Code" />),
+    github: mapLogo(<GitHubLogo title="GitHub" className={size} />),
+    vercel: mapLogo(<VercelLogo title="Vercel" className="h-10 w-30" />),
+    vscode: mapLogo(<VsCodeLogo title="VS Code" className={size} />),
 }
 
 export const dataToolsLogo = {
-    pandas: mapLogo(<PandasLogo title="Pandas" className="text-[rgb(99,62,246)]" />),
-    numpy: mapLogo(<NumpyLogo title="NumPy" />),
-    matplotlib: mapLogo(<MatplotlibLogo title="Matplotlib" />),
+    pandas: mapLogo(<PandasLogo title="Pandas" className={`text-[rgb(99,62,246)] ${size}`} />),
+    numpy: mapLogo(<NumpyLogo title="NumPy" className={size} />),
+    matplotlib: mapLogo(<MatplotlibLogo title="Matplotlib" className={size} />),
 }
 
 export const langKeys = Object.keys(langLogos) as LanguagesList

@@ -113,3 +113,47 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 } */
+
+.skills-container > div {
+  margin-bottom: 2rem;
+  padding: 1rem 0.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.75rem 1.25rem;
+  align-items: center;
+  background-color: var(--accent-bg);
+  border-radius: 10px;
+
+  @media (width >= 40rem) {
+    grid-template-columns: 130px 1fr;
+  }
+
+  h2 {
+    color: var(--text-h);
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+
+    @media (width >= 40rem) {
+      text-align: end;
+    }
+  }
+
+  /* svg {
+    width: 3.75rem;
+    height: 3.75rem;
+  } */
+
+
+  > div {
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.25rem;
+    background-color: var(--bg);
+    border-radius: 15px;
+  }
+}
