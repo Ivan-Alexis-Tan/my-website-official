@@ -61,7 +61,7 @@ export const databaseLogos = {
 }
 
 export const toolsLogo = {
-    git: mapLogo(<GitLogo title="Git" />),
+    git: mapLogo(<GitLogo title="Git" className={size} />),
     github: mapLogo(<GitHubLogo title="GitHub" className={size} />),
     vercel: mapLogo(<VercelLogo title="Vercel" className="h-10 w-30" />),
     vscode: mapLogo(<VsCodeLogo title="VS Code" className={size} />),

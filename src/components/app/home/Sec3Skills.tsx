@@ -1,22 +1,24 @@
+import SkillsLogos from "../../helpers/SkillsLogos"
 import { 
-    backendLogoKeys,
     backendLogos,
-    databaseLogoKeys,
     databaseLogos,
     dataToolsLogo,
-    dataToolsLogoKeys,
-    frontendLogoKeys, 
     frontendLogos, 
-    langKeys, 
-    langLogos, 
+    langLogos,
     toolsLogo, 
-    toolsLogoKeys
 } from "../../svgs/logos/logoMaps"
 
 export default function Sec3Skills() {
-    const test = `"w-full grid grid-cols-1 sm:grid-cols-[150px_1fr] gap-x-10 gap-3 sm:gap-y-5 items-center [&_h2,&>div]:border
-                                [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:text-(--text-h) [&_h2]:text-center sm:[&_h2]:text-end
-                                [&_svg]:w-15 [&_svg]:h-15 [&>div]:mb-5 [&>div]:flex [&>div]:flex-wrap [&>div]:flex-row [&>div]:justify-evenly [&>div]:gap-5"`
+    const devLogos = {
+        languages: mapLogos("Languages", langLogos),
+        frontend: mapLogos("Frontend", frontendLogos),
+        backend: mapLogos("Backend", backendLogos),
+        databases: mapLogos("Databases", databaseLogos),
+        tools: mapLogos("Tools", toolsLogo),
+        dataTools: mapLogos("Data Tools", dataToolsLogo),
+    }
+    const devLogoKeys = Object.keys(devLogos) as (keyof (typeof devLogos))[]
+
     return (
         <div className="p-4">
             {/* Section Header */}
@@ -27,76 +29,28 @@ export default function Sec3Skills() {
                 <h1 className="text-4xl font-bold text-(--text-h)">Skills</h1>
             </div>
 
+            <div className="mb-5">
+                <p>I enjoy building full-stack applications with a strong focus on backend development, databases, and data-driven solutions. Here are the technologies I've worked with across my projects.</p>
+            </div>
+
+            {/* Skill Logos */}
             <div className="max-w-2xl mx-auto">
-                <div className="skills-container"
-                >
-                    <div>
-                        <h2>Languages</h2>
-                        <div>
-                            {langKeys.map(lang => (
-                                <div key={lang}>
-                                    {langLogos[lang].comp}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div>
-                        <h2>Frontend</h2>
-                        <div>
-                            {frontendLogoKeys.map(front => (
-                                <div key={front}>
-                                    {frontendLogos[front].comp}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div>
-                        <h2>Backend</h2>
-                        <div>
-                            {backendLogoKeys.map(back => (
-                                <div key={back}>
-                                    {backendLogos[back].comp}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div>
-                        <h2>Databases</h2>
-                        <div>
-                            {databaseLogoKeys.map(db => (
-                                <div key={db}>
-                                    {databaseLogos[db].comp}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div>
-                        <h2>Tools</h2>
-                        <div>
-                            {toolsLogoKeys.map(tool => (
-                                <div key={tool}>
-                                    {toolsLogo[tool].comp}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div>
-                        <h2>Data Tools</h2>
-                        <div>
-                            {dataToolsLogoKeys.map(tool => (
-                                <div key={tool}>
-                                    {dataToolsLogo[tool].comp}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                {devLogoKeys.map(key => (
+                    <SkillsLogos 
+                        title={devLogos[key].title} 
+                        logos={devLogos[key].logos}
+                        className="mb-5"
+                        key={key}
+                    />
+                ))}
             </div>
         </div>
     )
+}
+
+function mapLogos(
+    title: string, 
+    logos: Record<string, Record<"comp", React.ReactNode>>,
+) {
+    return { title, logos }
 }
