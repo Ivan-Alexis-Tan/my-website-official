@@ -3,6 +3,7 @@
 import Sec2About from './components/app/home/Sec2About'
 import Sec1Hero from './components/app/home/Sec1Hero'
 import Sec3Skills from './components/app/home/Sec3Skills'
+import Sec4Projects from './components/app/home/Sec4Projects'
 // import './App.css'
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
 
       <section>
         <Sec3Skills />
+      </section>
+
+      <section>
+        <Sec4Projects />
       </section>
 
     </main>
