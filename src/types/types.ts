@@ -1,4 +1,4 @@
 export interface SVGComponentProps {
     className?: string
-    title?: string
+    title?: string | boolean
 }
