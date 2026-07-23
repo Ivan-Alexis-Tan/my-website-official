@@ -15,8 +15,10 @@ export function mapFeaturedProj({ imgSrc, title, build, repoUrl, liveDemoUrl, cl
 
 export default function ProjectCard({ imgSrc, title, build, repoUrl, liveDemoUrl, className }: ProjectCardProp) {
     return (
-        <div className={`${className ?? ""} max-w-125`}>
-            <img src={imgSrc} width={500} height={400} />
+        <div className={`${className ?? ""} max-w-125 rounded-2xl transition-all
+                        border border-(--accent-bg) hover:border-(--accent)`}
+        >
+            <img src={imgSrc} width={500} height={400} className="rounded-t-2xl" />
 
             <div className="*:mb-1.5 pl-3 pb-1 bg-(--accent-bg) rounded-b-2xl">
                 <h3 className="text-xl font-bold text-(--text-h)">{title}</h3>
@@ -36,15 +38,15 @@ export default function ProjectCard({ imgSrc, title, build, repoUrl, liveDemoUrl
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <GitHubLogo className="w-3 h-3" />
+                        <GitHubLogo className="w-4 h-4" />
                         <span>Repo</span>
                     </a>
                 </div>
 
                 <div className="flex flex-wrap gap-2 items-center [&_svg]:w-5 [&_svg]:h-5">
                     <div className="flex gap-1 items-center">
-                        <svg width={20} height={20}><use href="/icons.svg#test"/></svg>
-                        <span>Build:</span>
+                        <svg width={20} height={20}><use href="/icons.svg#handy-man"/></svg>
+                        <span><i>Build:</i></span>
                     </div>
 
                     {build.map((logo, idx) => (
