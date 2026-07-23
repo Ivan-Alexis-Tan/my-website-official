@@ -1,9 +1,9 @@
 import type { SVGComponentProps } from "../../../types/types";
 
-export default function NextAuthLogo({ className, title }: SVGComponentProps) {
+export default function NextAuthLogo({ className, title = true }: SVGComponentProps) {
     return (
         <svg className={className ?? ""} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 210 232">
-            {title && <title>{title}</title>}
+            {title && <title>{title === true ? "Auth.js" : title }</title>}
 
             <path fill="url(#a)" fillRule="evenodd" d="M208.687 31.859 30.095 167.73C8.164 127.966.568 79.998 0 51.228v-17.61c0-2.561 2.779-4.055 4.169-4.482C33.562 20.278 93.247 2.306 96.838 1.28 100.429.256 103.464 0 104.534 0h.097c1.069 0 4.104.256 7.696 1.28 3.591 1.025 63.276 18.998 92.669 27.856 1.034.317 2.836 1.225 3.691 2.723Z" clipRule="evenodd"/>
             <path fill="url(#b)" fillRule="evenodd" d="m30.094 167.952 178.592-135.87c.295.516.478 1.102.478 1.759V51.45c-.962 48.773-22.126 152.722-99.083 178.336-1.068.427-3.591 1.281-5.13 1.281h-.739c-1.539 0-4.062-.854-5.13-1.281-31.563-10.505-53.74-34.186-68.988-61.834Z" clipRule="evenodd"/>

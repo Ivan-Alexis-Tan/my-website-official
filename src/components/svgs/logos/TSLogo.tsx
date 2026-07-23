@@ -1,9 +1,9 @@
 import type { SVGComponentProps } from "../../../types/types";
 
-export default function TSLogo({ className, title }: SVGComponentProps) {
+export default function TSLogo({ className, title = true }: SVGComponentProps) {
     return (
     <svg className={className ?? ""} width="800px" height="800px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-        {title && <title>{title}</title>}
+        {title && <title>{title === true ? "TypeScript" : title }</title>}
         
         <g>
             <polygon fill="#007ACC" transform="translate(128.000000, 128.000000) scale(1, -1) translate(-128.000000, -128.000000) " points="0 128 0 0 128 0 256 0 256 128 256 256 128 256 0 256" />

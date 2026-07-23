@@ -1,9 +1,9 @@
 import type { SVGComponentProps } from "../../../types/types";
 
-export default function MatplotlibLogo({ className, title }: SVGComponentProps) {
+export default function MatplotlibLogo({ className, title = true }: SVGComponentProps) {
     return (
         <svg className={className ?? ""} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-            {title && <title>{title}</title>}
+            {title && <title>{title === true ? "Matplotlib" : title }</title>}
             
             <path
             fill="#fff"

@@ -1,6 +1,6 @@
 import type { SVGComponentProps } from "../../../types/types";
 
-export default function VsCodeLogo({ className, title }: SVGComponentProps) {
+export default function VsCodeLogo({ className, title = true }: SVGComponentProps) {
     return (
         <svg
             className={className ?? ""}
@@ -8,7 +8,7 @@ export default function VsCodeLogo({ className, title }: SVGComponentProps) {
             fill="none"
             viewBox="0 0 100 100"
         >
-            {title && <title>{title}</title>}
+            {title && <title>{title === true ? "VS Code" : title }</title>}
             <mask
             id="a"
             width={100}

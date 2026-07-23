@@ -1,6 +1,6 @@
 import type { SVGComponentProps } from "../../../types/types";
 
-export default function NumpyLogo({className, title}: SVGComponentProps) {
+export default function NumpyLogo({className, title = true}: SVGComponentProps) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +10,7 @@ export default function NumpyLogo({className, title}: SVGComponentProps) {
             viewBox="-9 0 274 274"
             className={className ?? ""}
         >
-            {title && <title>{title}</title>}
+            {title && <title>{title === true ? "NumPy" : title }</title>}
             
             <path
             fill="#4DABCF"

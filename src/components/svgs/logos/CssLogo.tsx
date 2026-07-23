@@ -2,14 +2,14 @@ import type { SVGComponentProps } from "../../../types/types";
 
 export default function CssLogo({ 
     className, 
-    title,
+    title = true,
     theme,
 }: SVGComponentProps & { theme?: "dark" | "light" }
 ) {
     const textClr = theme === "light" ? "#000000" : "#ffffff"
     return (
         <svg className={className ?? ""} width="800px" height="800px" viewBox="-52.5 0 361 361" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-            {title && <title>{title}</title>}
+            {title && <title>{title === true ? "CSS" : title }</title>}
             
             <g>
                 <path d="M127.843868,360.087912 L23.6617143,331.166242 L0.445186813,70.7657143 L255.554813,70.7657143 L232.31367,331.125451 L127.843868,360.087912 L127.843868,360.087912 Z" fill="#264DE4">

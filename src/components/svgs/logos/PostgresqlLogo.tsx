@@ -1,9 +1,9 @@
 import type { SVGComponentProps } from "../../../types/types";
 
-export default function PostgresqlLogo({ className, title }: SVGComponentProps) {
+export default function PostgresqlLogo({ className, title = true }: SVGComponentProps) {
     return (
         <svg className={className ?? ""} xmlns="http://www.w3.org/2000/svg" viewBox="0 200 1450 1">
-            {title && <title>{title}</title>}
+            {title && <title>{title === true ? "PostgreSQL" : title }</title>}
 
             <path
                 stroke="#000"

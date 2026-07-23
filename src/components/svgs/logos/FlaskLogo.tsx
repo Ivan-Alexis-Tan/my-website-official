@@ -2,7 +2,7 @@ import type { SVGComponentProps } from "../../../types/types";
 
 export default function FlaskLogo({ 
     className, 
-    title,
+    title = true,
     theme,
 }: SVGComponentProps & { theme?: "dark" | "light" }
 ) {
@@ -10,7 +10,7 @@ export default function FlaskLogo({
         <svg className={className ?? ""} fill={theme === "light" ? "#000000" : "#ffffff"}  version="1.1" xmlns="http://www.w3.org/2000/svg"  width="800px"
             height="800px" viewBox="0 0 512 512" enableBackground="new 0 0 512 512">
             
-            {title && <title>{title}</title>}
+            {title && <title>{title === true ? "Flask" : title }</title>}
 
             <g id="e6c6b53d3c8160b22dad35a0f7103ecc">
 
