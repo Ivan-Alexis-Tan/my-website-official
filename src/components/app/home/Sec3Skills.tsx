@@ -6,7 +6,7 @@ import {
     frontendLogos, 
     langLogos,
     toolsLogo, 
-} from "../../svgs/logos/logoMaps"
+} from "../../../helpers/logoMaps"
 
 export default function Sec3Skills() {
     const devLogos = {
@@ -34,7 +34,7 @@ export default function Sec3Skills() {
             </div>
 
             {/* Skill Logos */}
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto [&_svg]:h-15 [&_svg]:w-15">
                 {devLogoKeys.map(key => (
                     <SkillsLogos 
                         title={devLogos[key].title} 
