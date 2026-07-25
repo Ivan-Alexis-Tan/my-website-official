@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
-import { featuredProj } from "../../../helpers/projectData";
+// import { featuredProj } from "../../../helpers/projectData";
 
 import ProjectCard from "../../helpers/ProjectCard";
+import { searchProject } from "../../../helpers/projectsHelpers";
 
 export default function Sec4Projects() {
+    const featuredProjects = searchProject("class", "featured")
+    
     return (
         <div className="p-5">
             {/* Section Title */}
@@ -14,19 +17,20 @@ export default function Sec4Projects() {
                 <h1 className="text-4xl font-bold text-(--text-h)">Projects</h1>
             </div>
 
+            <h2 className="text-2xl font-bold text-(--text-h) mb-2">Featured:</h2>
             <div className="mb-5 mx-auto gap-5 flex flex-wrap justify-center">
-                {featuredProj.map(proj => (
-                    <ProjectCard key={proj.title}
+                {featuredProjects.map(proj => (
+                    <ProjectCard key={proj.id}
                         imgSrc={proj.imgSrc}
-                        title={proj.title}
+                        title={proj.name}
                         repoUrl={proj.repoUrl}
-                        liveDemoUrl={proj.liveDemoUrl}
+                        liveDemoUrl={proj.liveDemoUrl as string}
                         build={proj.build}
                     />
                 ))}
             </div>
 
-            <Link to={"/projects"}
+            <Link to={"/projects/personal-finance-manager"}
                 className="gap-1 flex items-center hover:text-(--accent)"
             >
                 <svg className="w-5 h-5">
