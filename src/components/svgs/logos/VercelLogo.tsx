@@ -1,10 +1,6 @@
 import type { SVGComponentProps } from "../../../types/types";
 
-export default function VercelLogo({ 
-    className, 
-    title = true, 
-    theme,
-}: SVGComponentProps & { theme?: "dark" | "light" }
+export default function VercelLogo({ className, title = true, theme }: SVGComponentProps
 ) {
     if (theme === "light") return (
         <svg className={className ?? ""} aria-label="Vercel logotype" height="52" role="img" viewBox="0 0 262 52" width="262" xmlns="http://www.w3.org/2000/svg">
