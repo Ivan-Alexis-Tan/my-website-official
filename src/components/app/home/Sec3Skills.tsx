@@ -1,21 +1,21 @@
 import SkillsLogos from "../../helpers/SkillsLogos"
 import { 
-    backendLogos,
-    databaseLogos,
-    dataToolsLogo,
-    frontendLogos, 
-    langLogos,
-    toolsLogo, 
+    backendLogoKeys,
+    databaseLogoKeys,
+    frontendLogoKeys,
+    langKeys, 
+    toolsLogoKeys,
+    type LogoKey, 
 } from "../../../helpers/logoMaps"
 
 export default function Sec3Skills() {
     const devLogos = {
-        languages: mapLogos("Languages", langLogos),
-        frontend: mapLogos("Frontend", frontendLogos),
-        backend: mapLogos("Backend", backendLogos),
-        databases: mapLogos("Databases", databaseLogos),
-        tools: mapLogos("Tools", toolsLogo),
-        dataTools: mapLogos("Data Tools", dataToolsLogo),
+        languages: mapLogo("Languages", langKeys),
+        frontend: mapLogo("Frontend", frontendLogoKeys),
+        backend: mapLogo("Backend", backendLogoKeys),
+        databases: mapLogo("Databases", databaseLogoKeys),
+        tools: mapLogo("Tools", toolsLogoKeys),
+        dataTools: mapLogo("Data Tools", databaseLogoKeys),
     }
     const devLogoKeys = Object.keys(devLogos) as (keyof (typeof devLogos))[]
 
@@ -38,7 +38,7 @@ export default function Sec3Skills() {
                 {devLogoKeys.map(key => (
                     <SkillsLogos 
                         title={devLogos[key].title} 
-                        logos={devLogos[key].logos}
+                        logoKeys={devLogos[key].logo}
                         className="mb-5"
                         key={key}
                     />
@@ -48,9 +48,9 @@ export default function Sec3Skills() {
     )
 }
 
-function mapLogos(
+function mapLogo(
     title: string, 
-    logos: Record<string, Record<"comp", React.ReactNode>>,
+    logo: LogoKey[],
 ) {
-    return { title, logos }
+    return { title, logo }
 }

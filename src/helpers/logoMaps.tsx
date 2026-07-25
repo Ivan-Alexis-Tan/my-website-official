@@ -23,6 +23,7 @@ import SqliteLogo from "../components/svgs/logos/SqliteLogo"
 import TailwindLogo from "../components/svgs/logos/TailwindLogo"
 import VercelLogo from "../components/svgs/logos/VercelLogo"
 import VsCodeLogo from "../components/svgs/logos/VsCodeLogo"
+import type { SVGComponentProps } from "../types/types"
 
 type LanguagesList = (keyof typeof langLogos)[]
 type FrontendList = (keyof typeof frontendLogos)[]
@@ -32,45 +33,45 @@ type ToolsList = (keyof typeof toolsLogo)[]
 type DataToolsList = (keyof typeof dataToolsLogo)[]
 
 export const langLogos = {
-    python: mapLogo(<PythonLogo  />),
-    typescript: mapLogo(<TSLogo  />),
-    javascript: mapLogo(<JSLogo  />),
-    sql: mapLogo(<SqlLogo  />),
+    python: PythonLogo,
+    typescript: TSLogo,
+    javascript: JSLogo,
+    sql: SqlLogo,
 }
 
 export const frontendLogos = {
-    react: mapLogo(<ReactLogo  />),
-    nextjs: mapLogo(<NextJsLogo  />),
-    tailwind: mapLogo(<TailwindLogo  />),
-    html: mapLogo(<HtmlLogo  />),
-    css: mapLogo(<CssLogo  />),
+    react: ReactLogo,
+    nextjs: NextJsLogo,
+    tailwind: TailwindLogo,
+    html: HtmlLogo,
+    css: CssLogo,
 }
 
 export const backendLogos = {
-    authjs: mapLogo(<NextAuthLogo  />),
-    flask: mapLogo(<FlaskLogo  />),
-    fastapi: mapLogo(<FastApiLogo   /> ),
-    prisma: mapLogo(<PrismaLogo  />),
-    sqlalchemy: mapLogo(<SqlAlchemyLogo   />),
+    authjs: NextAuthLogo,
+    flask: FlaskLogo,
+    fastapi: FastApiLogo,
+    prisma: PrismaLogo,
+    sqlalchemy: SqlAlchemyLogo ,
 }
 
 export const databaseLogos = {
-    mysql: mapLogo(<MySqlLogo  />),
-    postgresql: mapLogo(<PostgresqlLogo className="h-10! w-30!" />),
-    sqlite: mapLogo(<SqliteLogo  />),
+    mysql: MySqlLogo,
+    postgresql: PostgresqlLogo, // className="h-10! w-30!"
+    sqlite: SqliteLogo,
 }
 
 export const toolsLogo = {
-    git: mapLogo(<GitLogo  />),
-    github: mapLogo(<GitHubLogo  />),
-    vercel: mapLogo(<VercelLogo className="h-10! w-20!" />),
-    vscode: mapLogo(<VsCodeLogo  />),
+    git: GitLogo,
+    github: GitHubLogo,
+    vercel: VercelLogo, // className="h-10! w-20!"
+    vscode: VsCodeLogo,
 }
 
 export const dataToolsLogo = {
-    pandas: mapLogo(<PandasLogo className={`text-[rgb(99,62,246)]`} />),
-    numpy: mapLogo(<NumpyLogo  />),
-    matplotlib: mapLogo(<MatplotlibLogo  />),
+    pandas: PandasLogo, // className={`text-[rgb(99,62,246)]`},
+    numpy: NumpyLogo,
+    matplotlib: MatplotlibLogo,
 }
 
 export const langKeys = Object.keys(langLogos) as LanguagesList
@@ -89,8 +90,10 @@ export const allLogos = {
     ...dataToolsLogo,
 }
 
-function mapLogo(comp: React.ReactNode) {
-    return {
-        comp,
-    }
+export type LogoKey = keyof typeof allLogos
+
+export function displayLogo(logoKey: LogoKey, props?: SVGComponentProps) {
+    const Logo = allLogos[logoKey]
+
+    return <Logo {...props} /> 
 }
