@@ -9,10 +9,6 @@ type ProjectCardProp = {
     className?: string
 }
 
-export function mapFeaturedProj({ imgSrc, title, build, repoUrl, liveDemoUrl, className }: ProjectCardProp) {
-    return { imgSrc, title, build, repoUrl, liveDemoUrl, className }
-} 
-
 export default function ProjectCard({ imgSrc, title, build, repoUrl, liveDemoUrl, className }: ProjectCardProp) {
     return (
         <div className={`${className ?? ""} max-w-125 rounded-2xl transition-all
