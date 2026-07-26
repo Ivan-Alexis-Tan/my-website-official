@@ -1,18 +1,21 @@
+import { Link } from "react-router-dom"
 import GitHubLogo from "../svgs/logos/GitHubLogo"
 
 type ProjectCardProp = {
     imgSrc: string
     title: string
     build: React.ReactNode[]
+    route: string
     repoUrl: string
     liveDemoUrl?: string
     className?: string
 }
 
-export default function ProjectCard({ imgSrc, title, build, repoUrl, liveDemoUrl, className }: ProjectCardProp) {
+export default function ProjectCard({ imgSrc, title, build, route, repoUrl, liveDemoUrl, className }: ProjectCardProp) {
     return (
-        <div className={`${className ?? ""} max-w-125 rounded-2xl transition-all
+        <Link className={`${className ?? ""} max-w-125 rounded-2xl transition-all
                         border border-(--accent-bg) hover:border-(--accent)`}
+            to={route}
         >
             <img src={imgSrc} width={500} height={400} className="rounded-t-2xl" />
 
@@ -50,6 +53,6 @@ export default function ProjectCard({ imgSrc, title, build, repoUrl, liveDemoUrl
                     ))}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
