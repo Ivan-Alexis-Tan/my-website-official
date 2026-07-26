@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-// import { featuredProj } from "../../../helpers/projectData";
+
+import { searchProject } from "../../../helpers/projectsHelpers";
 
 import ProjectCard from "../../helpers/ProjectCard";
-import { searchProject } from "../../../helpers/projectsHelpers";
+
 
 export default function Sec4Projects() {
     const featuredProjects = searchProject("class", "featured")
-    
+
     return (
         <div className="p-5">
             {/* Section Title */}
@@ -23,6 +24,7 @@ export default function Sec4Projects() {
                     <ProjectCard key={proj.id}
                         imgSrc={proj.imgSrc}
                         title={proj.name}
+                        route={proj.route}
                         repoUrl={proj.repoUrl}
                         liveDemoUrl={proj.liveDemoUrl as string}
                         build={proj.build}
