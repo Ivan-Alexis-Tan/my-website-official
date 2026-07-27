@@ -6,6 +6,12 @@ import type { ProjectMapType } from "../types/types";
 
 const baseRoute = "/projects"
 
+export const projectIds = [
+    "personal-finance-manager",
+    "student-records-manager",
+    "compiled-tutorial-notes",
+] as const 
+
 export const projectsMap: ProjectMapType[] = [
     {
         id: "personal-finance-manager",
@@ -40,4 +46,4 @@ export const projectsMap: ProjectMapType[] = [
         imgSrc: "/tutorial-notes-thumbnail.png",
         class: "featured",
     },
-]
+];

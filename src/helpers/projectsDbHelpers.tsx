@@ -1,8 +1,8 @@
-import { projectsMap } from "../data/projectsData"
+import { projectsMap } from "../database/projectsData"
 
-import type { ProjectMapType, SVGComponentProps } from "../types/types"
+import type { ProjectId, ProjectMapType, SVGComponentProps } from "../types/types"
 
-export function getProject(projectId: ProjectMapType["id"]) {
+export function getProject(projectId: ProjectId) {
     return projectsMap.find(proj => proj.id === projectId) as ProjectMapType
 }
 

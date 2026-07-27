@@ -1,4 +1,6 @@
 import type { ComponentType } from "react"
+import type { projectIds } from "../database/projectsData"
+import type { LogoKey } from "../helpers/logoMaps"
 
 export interface SVGComponentProps {
     className?: string
@@ -13,7 +15,9 @@ export type ProjectMapType = {
     component: ComponentType<Pick<SVGComponentProps, "className">> | null
     repoUrl: string
     liveDemoUrl: string | null
-    build: string[]
+    build: LogoKey[]
     imgSrc: string
     class: "featured" | "others"
 }
+
+export type ProjectId = typeof projectIds[number]
