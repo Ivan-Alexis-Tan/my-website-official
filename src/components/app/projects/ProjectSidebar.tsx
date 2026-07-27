@@ -5,11 +5,11 @@ import IconLeftPanel from "../../svgs/icons/IconLeftPanel";
 import IconHome from "../../svgs/icons/IconHome";
 import IconBookmarkStar from "../../svgs/icons/IconBookmarkStar";
 import SidebarDrawer from "./SidebarDrawer";
-import { searchProject } from "../../../helpers/projectsHelpers";
+import { searchProject } from "../../../helpers/projectsDbHelpers";
 
 export default function ProjectSidebar() {
     const [fullSidebar, setFullSidebar] = useState<boolean>(true)
-    
+
     const featuredProjects = searchProject("class", "featured")
     function refineProjects() {
         return featuredProjects.map(proj => ({name: proj.name, link: proj.route}))
@@ -17,8 +17,8 @@ export default function ProjectSidebar() {
 
     return fullSidebar 
         ? (
-            <header className="w-50 ah-screen sticky top-0 left-0 self-start
-                               [&_svg]:w-7 [&_svg]:h-7 [&_svg]:text-(--text-h)"
+            <header className="w-50 h-screen sticky top-0 left-0 self-start
+                               [&_svg]:w-7 [&_svg]:h-7 [&_svg]:text-(--text-h) border-r-2 border-(--border)"
             >
                 <nav className="mb-5 pl-4 pr-2 flex justify-between items-center">
                     <Link to={"/"} className="text-2xl flex items-center text-(--text-h) font-bold hover:[&_svg,&_span]:text-(--accent)">
@@ -47,8 +47,8 @@ export default function ProjectSidebar() {
             </header>
         )
         : (
-            <header className="w-15 ah-screen gap-3 sticky top-0 left-0 self-start flex flex-col items-center
-                [&_svg]:w-7 [&_svg]:h-7 [&_svg]:text-(--text-h) [&_svg]:hover:text-(--accent)"
+            <header className="w-15 h-screen gap-3 sticky top-0 left-0 self-start flex flex-col items-center
+                [&_svg]:w-7 [&_svg]:h-7 [&_svg]:text-(--text-h) [&_svg]:hover:text-(--accent) border-r-2 border-(--border)"
             >
                 <button className="text-white hover:text-(--accent)"
                     onClick={_ => setFullSidebar(true)}

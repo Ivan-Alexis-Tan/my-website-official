@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { searchProject } from "../../../helpers/projectsHelpers";
+import { searchProject } from "../../../helpers/projectsDbHelpers";
 
 import ProjectCard from "../../helpers/ProjectCard";
 
