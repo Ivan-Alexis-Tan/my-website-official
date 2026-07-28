@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
+import { Link, useLocation } from "react-router-dom"
+
+import type { ProjectMapType } from "../../../types/types"
+
+import { searchProject } from "../../../helpers/projectsDbHelpers"
+
+import IconClose from "../../svgs/icons/IconClose"
 import IconMenu from "../../svgs/icons/IconMenu"
 import IconHome from "../../svgs/icons/IconHome"
-import { Link, useLocation } from "react-router-dom"
-import SidebarDrawer from "./SidebarDrawer"
 import IconBookmarkStar from "../../svgs/icons/IconBookmarkStar"
-import { searchProject } from "../../../helpers/projectsDbHelpers"
-import type { ProjectMapType } from "../../../types/types"
-import IconClose from "../../svgs/icons/IconClose"
+import SidebarDrawer from "./SidebarDrawer"
 
 export default function ProjectNavbar({ className }: { className?: string }) {
     const { pathname } = useLocation()
