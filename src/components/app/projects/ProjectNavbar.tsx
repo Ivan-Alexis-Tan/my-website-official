@@ -26,20 +26,20 @@ export default function ProjectNavbar({ className }: { className?: string }) {
     }, [pathname])
     
     return (
-        <div className={`${className ?? ""} `}>
+        <div className={`${className ?? ""} [&_svg]:w-7! [&_svg]:h-7!`}>
             <div className="flex justify-between items-center">
                 <button title="Select a project"
                     className="flex gap-3 items-center hover:*:text-(--accent)"
                     onClick={_ => setShowProj(p => !p)}
                 >
-                    <IconMenu className="w-10 h-10" />
+                    <IconMenu />
                     <h1 className="text-4xl font-bold text-(--text-h)">Projects</h1>
                 </button>
 
                 <Link to={"/"}
                     className="hover:text-(--accent)"
                 >
-                    <IconHome className="w-10 h-10" />
+                    <IconHome />
                 </Link>
             </div>
 
@@ -61,7 +61,7 @@ export default function ProjectNavbar({ className }: { className?: string }) {
                             <span title="Close" className="cursor-pointer hover:text-(--accent)" 
                                 onClick={_ => setShowProj(false)}
                             >
-                                <IconClose kind="small" className="w-10 h-10" />
+                                <IconClose kind="small" />
                             </span>
                         </div>
 
