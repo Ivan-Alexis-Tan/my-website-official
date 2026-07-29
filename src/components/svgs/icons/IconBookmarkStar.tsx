@@ -1,6 +1,6 @@
 import type { SVGComponentProps } from "../../../types/types";
 
-export default function IconBookmarkStar({ className, title}: SVGComponentProps) {
+export default function IconBookmarkStar({ className, title = true}: SVGComponentProps) {
     return (
         <svg className={className ?? ""} xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
             {title && <title>{title === true ? "Featured" : title}</title>}

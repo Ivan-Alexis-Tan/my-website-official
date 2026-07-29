@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, type ComponentType } from "react";
 
 import IconLeftPanel from "../../svgs/icons/IconLeftPanel";
 import IconHome from "../../svgs/icons/IconHome";
@@ -13,6 +13,14 @@ export default function ProjectSidebar({ className }: { className?: string}) {
     const featuredProjects = searchProject("class", "featured")
     function refineProjects() {
         return featuredProjects.map(proj => ({name: proj.name, link: proj.route}))
+    }
+
+    const ClosedSidebarIcon = ({ svgIcon }: { svgIcon: React.ReactNode }) => {
+        return (
+            <div onClick={_ => setFullSidebar(true)}>
+                {svgIcon}
+            </div>
+        )
     }
 
     return fullSidebar 
@@ -57,8 +65,13 @@ export default function ProjectSidebar({ className }: { className?: string}) {
                 </button>
 
                 <Link to={"/"}>
-                    <IconHome className="" />
+                    <IconHome />
                 </Link>
+
+                <hr className="w-10" />
+
+                <ClosedSidebarIcon svgIcon={<IconBookmarkStar />} />
             </header>
         )
 }
+
