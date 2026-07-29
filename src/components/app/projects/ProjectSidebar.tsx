@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { useState, type ComponentType } from "react";
+import { useState } from "react";
+
+import { searchProject } from "../../../helpers/projectsDbHelpers";
 
 import IconLeftPanel from "../../svgs/icons/IconLeftPanel";
 import IconHome from "../../svgs/icons/IconHome";
 import IconBookmarkStar from "../../svgs/icons/IconBookmarkStar";
 import SidebarDrawer from "./SidebarDrawer";
-import { searchProject } from "../../../helpers/projectsDbHelpers";
 
 export default function ProjectSidebar({ className }: { className?: string}) {
     const [fullSidebar, setFullSidebar] = useState<boolean>(true)
