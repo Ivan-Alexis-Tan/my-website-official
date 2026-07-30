@@ -1,4 +1,5 @@
-import { displayLogo, type LogoKey } from "../../helpers/logoMaps"
+import { displayLogo } from "../../helpers/logoMaps"
+import type { LogoKey } from "../../types/logosMapTypes"
 import type { SVGComponentProps } from "../../types/types"
 
 type SkillsLogosProps = {
