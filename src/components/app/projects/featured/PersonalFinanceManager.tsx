@@ -12,7 +12,7 @@ import ProjectLinkBtns from "../../../helpers/ProjectLinks";
 
 export default function PersonalFinanceManager({ className }: { className?: string }) {
     const project = getProject("personal-finance-manager")
-    const logoCats = categorizeLogo([...project.build, "github", "git", "javascript", "react", "css"])
+    const logoCats = categorizeLogo([...project.build, "git", "javascript", "react", "css"])
     const logoStyle: Partial<Record<LogoKey, string >> = {
         postgresql: "w-25! h-10!",
         vercel: "w-20! h-5!",
