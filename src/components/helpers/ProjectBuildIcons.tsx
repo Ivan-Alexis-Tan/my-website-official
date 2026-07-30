@@ -1,7 +1,17 @@
 import { displayLogo } from "../../helpers/logoMaps";
+import type { LogoKey } from "../../types/logosMapTypes";
 import type { ProjectMapType } from "../../types/types";
 
-export default function ProjectBuild({ build }: { build: ProjectMapType["build"]}) {
+export type ProjectBuildProps = { 
+    build: ProjectMapType["build"]
+    logoProps?: Partial<Record<LogoKey, {
+        className?: string;
+        title?: string | boolean;
+        theme?: "light" | "dark";
+    }>>
+}
+
+export default function ProjectBuild({ build, logoProps }: ProjectBuildProps) {
     return (
         <div className="flex flex-wrap gap-2 items-center [&_svg]:w-5 [&_svg]:h-5">
             <div className="flex gap-1 items-center">
@@ -10,7 +20,7 @@ export default function ProjectBuild({ build }: { build: ProjectMapType["build"]
             </div>
 
             {build.map((logo, idx) => (
-                <div key={idx}>{displayLogo(logo)}</div>
+                <div key={idx}>{displayLogo(logo, logoProps?.[logo])}</div>
             ))}
         </div>
     )
