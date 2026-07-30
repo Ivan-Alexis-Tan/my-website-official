@@ -77,10 +77,51 @@ export const allLogos = {
     ...dataToolsLogo,
 }
 
-export type LogoKey = keyof typeof allLogos
+export const categorizedLogos = {
+    langLogos,
+    frontendLogos,
+    backendLogos,
+    databaseLogos,
+    toolsLogo,
+    dataToolsLogo,
+}
+
+const logoCats = Object.entries(categorizedLogos).reduce(
+    (acc, [cat, logos]) => {
+        for (const logoName of Object.keys(logos)) {
+            acc[logoName as LogoKey] = cat as LogoCategories
+        }
+        return acc
+    }, 
+    {} as Record<LogoKey, LogoCategories>
+)
 
 export function displayLogo(logoKey: LogoKey, props?: SVGComponentProps) {
     const Logo = allLogos[logoKey]
 
     return <Logo {...props} /> 
+}
+
+export function categorizeLogo(logoArr: LogoKey[]) {
+    return logoArr.reduce(
+    (acc, logo) => {
+        const category = logoCats[logo]
+        acc[category] 
+            ? acc[category] = [...acc[category] as LogoKey[], logo]
+            : acc[category] = [logo]
+        return acc
+    }, {} as CategorizedLogos)
+}
+
+export function translateLogoCat(category: keyof NonNullable<CategorizedLogos>) {
+    const translation = {
+        langLogos: "Language",
+        frontendLogos: "Frontend",
+        backendLogos: "Backend",
+        databaseLogos: "Database",
+        toolsLogo: "Tools",
+        dataToolsLogo: "Data Tools",
+    }
+
+    return translation[category]
 }
