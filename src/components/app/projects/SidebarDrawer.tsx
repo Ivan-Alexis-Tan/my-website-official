@@ -38,7 +38,7 @@ export default function SidebarDrawer({ drawerName, pocketComponents, drawerIcon
                     {pocketComponents.map(comp => (
                         <Link key={comp.name} 
                             to={comp.link}
-                            className="pl-12 flex flex-col py-1.5 hover:bg-(--border) cursor-pointer"
+                            className="pl-12 pr-3 flex flex-col py-1.5 hover:bg-(--border) cursor-pointer"
                         >
                             {comp.name}
                         </Link>

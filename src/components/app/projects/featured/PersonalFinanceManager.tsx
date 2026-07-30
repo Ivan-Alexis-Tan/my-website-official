@@ -79,12 +79,12 @@ export default function PersonalFinanceManager({ className }: { className?: stri
                     const logos = logoCats[cat as keyof typeof logoCats]
                     
                     return (
-                        <div key={cat} className="mb-3 p-2 grid grid-cols-[100px_1fr] items-center rounded-2xl border">
+                        <div key={cat} className="mb-3 mx-auto max-w-150 p-2 gap-5 grid grid-cols-[95px_1fr] items-center rounded-2xl border">
                             <span className="text-end font-bold">
                                 {translateLogoCat(cat as keyof CategorizedLogos)}
                             </span>
 
-                            <div className="flex justify-evenly items-center">
+                            <div className="py-2 px-3 gap-5 flex flex-wrap justify-evenly items-center rounded-2xl bg-(--social-bg)">
                                 {logos?.map(logo => (
                                     <p key={logo}>
                                         {displayLogo(
