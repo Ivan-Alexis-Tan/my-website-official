@@ -1,16 +1,17 @@
-import SkillsLogos from "../../helpers/SkillsLogos"
 import { 
-    backendLogoKeys,
-    databaseLogoKeys,
-    frontendLogoKeys,
-    langKeys, 
-    toolsLogoKeys,
-    type LogoKey, 
-} from "../../../helpers/logoMaps"
+    backendLogoKeys, 
+    databaseLogoKeys, 
+    frontendLogoKeys, 
+    langLogoKeys, 
+    toolsLogoKeys, 
+    type LogoKey
+} from "../../../types/logosMapTypes"
+
+import SkillsLogos from "../../helpers/SkillsLogos"
 
 export default function Sec3Skills() {
     const devLogos = {
-        languages: mapLogo("Languages", langKeys),
+        languages: mapLogo("Languages", langLogoKeys),
         frontend: mapLogo("Frontend", frontendLogoKeys),
         backend: mapLogo("Backend", backendLogoKeys),
         databases: mapLogo("Databases", databaseLogoKeys),

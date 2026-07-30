@@ -1,6 +1,11 @@
 import type { ComponentType } from "react"
 import type { projectIds } from "../database/projectsData"
-import type { LogoKey } from "../helpers/logoMaps"
+import type { LogoKey } from "./logosMapTypes"
+
+export interface ComponentAndName {
+    name: string
+    comp: ComponentType<{}>
+}
 
 export interface SVGComponentProps {
     className?: string

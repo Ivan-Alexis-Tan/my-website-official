@@ -24,13 +24,7 @@ import TailwindLogo from "../components/svgs/logos/TailwindLogo"
 import VercelLogo from "../components/svgs/logos/VercelLogo"
 import VsCodeLogo from "../components/svgs/logos/VsCodeLogo"
 import type { SVGComponentProps } from "../types/types"
-
-type LanguagesList = (keyof typeof langLogos)[]
-type FrontendList = (keyof typeof frontendLogos)[]
-type BackendList = (keyof typeof backendLogos)[]
-type DatabaseList = (keyof typeof databaseLogos)[]
-type ToolsList = (keyof typeof toolsLogo)[]
-type DataToolsList = (keyof typeof dataToolsLogo)[]
+import type { CategorizedLogos, LogoCategories, LogoKey } from "../types/logosMapTypes"
 
 export const langLogos = {
     python: PythonLogo,
@@ -73,13 +67,6 @@ export const dataToolsLogo = {
     numpy: NumpyLogo,
     matplotlib: MatplotlibLogo,
 }
-
-export const langKeys = Object.keys(langLogos) as LanguagesList
-export const frontendLogoKeys = Object.keys(frontendLogos) as FrontendList
-export const backendLogoKeys = Object.keys(backendLogos) as BackendList
-export const databaseLogoKeys = Object.keys(databaseLogos) as DatabaseList
-export const toolsLogoKeys = Object.keys(toolsLogo) as ToolsList
-export const dataToolsLogoKeys = Object.keys(dataToolsLogo) as DataToolsList
 
 export const allLogos = {
     ...langLogos,
