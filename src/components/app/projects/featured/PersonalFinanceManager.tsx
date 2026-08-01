@@ -1,24 +1,11 @@
-import { 
-    categorizeLogo, 
-    displayLogo, 
-    translateLogoCat 
-} from "../../../../helpers/logoMaps";
 import { getProject } from "../../../../helpers/projectsDbHelpers";
-
-import type { CategorizedLogos, LogoKey } from "../../../../types/logosMapTypes";
 
 import ProjectBuild from "../../../helpers/ProjectBuildIcons";
 import ProjectLinkBtns from "../../../helpers/ProjectLinks";
+import CategorizedTechStack from "../CategorizedTechStack";
 
 export default function PersonalFinanceManager({ className }: { className?: string }) {
     const project = getProject("personal-finance-manager")
-    const logoCats = categorizeLogo([...project.build, "git", "javascript", "react", "css"])
-    const logoStyle: Partial<Record<LogoKey, string >> = {
-        postgresql: "w-25! h-10!",
-        vercel: "w-20! h-5!",
-        nextjs: "w-20! h-5!",
-    }
-    const logoStyleKeys = Object.keys(logoStyle)
     
     return (
         <div className={`${className ?? ""} mb-5 *:mb-5 [&_h3]:text-xl [&_h3,&_h4]:font-bold [&_h3,&_h4]:text-(--text-h) [&_h3]:mb-2`}>
@@ -75,32 +62,13 @@ export default function PersonalFinanceManager({ className }: { className?: stri
             <div>
                 <h3>Tech Stack</h3>
 
-                {Object.keys(logoCats).map(cat => {
-                    const logos = logoCats[cat as keyof typeof logoCats]
-                    
-                    return (
-                        <div key={cat} className="mb-3 mx-auto max-w-150 p-2 gap-5 grid grid-cols-[95px_1fr] items-center rounded-2xl border">
-                            <span className="text-end font-bold">
-                                {translateLogoCat(cat as keyof CategorizedLogos)}
-                            </span>
-
-                            <div className="py-2 px-3 gap-5 flex flex-wrap justify-evenly items-center rounded-2xl bg-(--social-bg)">
-                                {logos?.map(logo => (
-                                    <p key={logo}>
-                                        {displayLogo(
-                                            logo, 
-                                            {className: 
-                                                logoStyleKeys.includes(logo) 
-                                                    ? logoStyle[logo as LogoKey] as string 
-                                                    : "w-10! h-10!"
-                                            }
-                                        )}
-                                    </p>
-                                ))}
-                            </div>
-                        </div>
-                    )
-                })}
+                <CategorizedTechStack logos={[...project.build, "git", "javascript", "react", "css"]} 
+                    custom={{
+                        postgresql: { className: "w-25! h-10!" },
+                        vercel: { className: "w-20! h-5!" },
+                        nextjs: { className: "w-20! h-5!" },
+                    }} 
+                />
             </div>
 
             <div>
