@@ -1,19 +1,28 @@
 import React, { useState } from "react"
 
 import IconKeebArrow from "../../svgs/icons/IconKeebArrow"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import type { ProjectMapType } from "../../../types/types"
 
 type SidebarDrawerProps = {
     drawerName: string
     pocketComponents: {
-        name: string
-        link: string
+        id: ProjectMapType["id"]
+        name: ProjectMapType["name"]
+        link: ProjectMapType["route"]
     }[]
     drawerIcon?: React.ReactNode
     className?: string
 }
 
-export default function SidebarDrawer({ drawerName, pocketComponents, drawerIcon, className }: SidebarDrawerProps) {
+export default function SidebarDrawer({ 
+    drawerName, 
+    pocketComponents, 
+    drawerIcon, 
+    className 
+}: SidebarDrawerProps
+) {
+    const { id } = useParams()
     const [openDrawer, setOpenDrawer] = useState<boolean>(true)
 
     return (
@@ -38,7 +47,7 @@ export default function SidebarDrawer({ drawerName, pocketComponents, drawerIcon
                     {pocketComponents.map(comp => (
                         <Link key={comp.name} 
                             to={comp.link}
-                            className="pl-12 pr-3 flex flex-col py-1.5 hover:bg-(--border) cursor-pointer"
+                            className={`${id === comp.id && "text-(--text-h) bg-(--border)"} pl-12 pr-3 flex flex-col py-1.5 hover:bg-(--border) cursor-pointer`}
                         >
                             {comp.name}
                         </Link>

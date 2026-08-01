@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import { searchProject } from "../../../helpers/projectsDbHelpers";
+import { projectRoutes, searchProject } from "../../../helpers/projectsDbHelpers";
 
 import IconLeftPanel from "../../svgs/icons/IconLeftPanel";
 import IconHome from "../../svgs/icons/IconHome";
@@ -12,9 +12,6 @@ export default function ProjectSidebar({ className }: { className?: string}) {
     const [fullSidebar, setFullSidebar] = useState<boolean>(true)
 
     const featuredProjects = searchProject("class", "featured")
-    function refineProjects() {
-        return featuredProjects.map(proj => ({name: proj.name, link: proj.route}))
-    }
 
     const ClosedSidebarIcon = ({ svgIcon }: { svgIcon: React.ReactNode }) => {
         return (
@@ -43,7 +40,7 @@ export default function ProjectSidebar({ className }: { className?: string}) {
                 </nav>
 
                 <SidebarDrawer drawerName="Featured" 
-                    pocketComponents={refineProjects()}
+                    pocketComponents={projectRoutes(featuredProjects)}
                     drawerIcon={<IconBookmarkStar />}
                     className="mb-5"
                 />

@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
-import type { ProjectMapType } from "../../../types/types"
-
-import { searchProject } from "../../../helpers/projectsDbHelpers"
+import { projectRoutes, searchProject } from "../../../helpers/projectsDbHelpers"
 
 import IconClose from "../../svgs/icons/IconClose"
 import IconMenu from "../../svgs/icons/IconMenu"
@@ -13,18 +11,14 @@ import SidebarDrawer from "./SidebarDrawer"
 
 export default function ProjectNavbar({ className }: { className?: string }) {
     const { pathname } = useLocation()
-    
     const [showProj, setShowProj] = useState<boolean>(false)
-    const featured = searchProject("class", "featured")
 
-    function refined(projects: ProjectMapType[]) {
-        return projects.map(proj => ({name: proj.name, link: proj.route}))
-    }
+    const featured = searchProject("class", "featured")
 
     useEffect(() => {
         setShowProj(false)
     }, [pathname])
-    
+
     return (
         <div className={`${className ?? ""} [&_svg]:w-7! [&_svg]:h-7!`}>
             <div className="flex justify-between items-center">
@@ -67,7 +61,7 @@ export default function ProjectNavbar({ className }: { className?: string }) {
 
                         <SidebarDrawer drawerName="Featured"
                             drawerIcon={<IconBookmarkStar />}
-                            pocketComponents={refined(featured)}
+                            pocketComponents={projectRoutes(featured)}
                             className="[&_svg]:w-10 [&_svg]:h-10"
                         />
                     </div>

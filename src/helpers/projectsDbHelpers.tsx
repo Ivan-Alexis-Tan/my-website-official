@@ -6,6 +6,15 @@ export function getProject(projectId: ProjectId) {
     return projectsMap.find(proj => proj.id === projectId) as ProjectMapType
 }
 
+export function projectRoutes(projects: ProjectMapType[]) {
+    return projects.map(proj => (
+        {
+            id: proj.id,
+            name: proj.name,
+            link: proj.route,
+        }
+    ))
+}
 
 export function DisplayProject(
     projectId: ProjectMapType['id'], 
