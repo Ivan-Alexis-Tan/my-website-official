@@ -5,7 +5,7 @@ import ProjectLinkBtns from "../../../helpers/ProjectLinks"
 import CategorizedTechStack from "../CategorizedTechStack"
 
 type CompiledTutorialNotesProps = {
-    className: string
+    className?: string
 }
 
 export default function CompiledTutorialNotes({ className }: CompiledTutorialNotesProps) {
