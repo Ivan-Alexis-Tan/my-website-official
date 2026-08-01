@@ -1,14 +1,9 @@
 import { displayLogo } from "../../helpers/logoMaps";
-import type { LogoKey } from "../../types/logosMapTypes";
-import type { ProjectMapType } from "../../types/types";
+import type { CustomSVGProps, ProjectMapType } from "../../types/types";
 
 export type ProjectBuildProps = { 
     build: ProjectMapType["build"]
-    logoProps?: Partial<Record<LogoKey, {
-        className?: string;
-        title?: string | boolean;
-        theme?: "light" | "dark";
-    }>>
+    logoProps?: CustomSVGProps
 }
 
 export default function ProjectBuild({ build, logoProps }: ProjectBuildProps) {

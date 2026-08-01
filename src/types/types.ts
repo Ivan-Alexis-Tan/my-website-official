@@ -13,6 +13,8 @@ export interface SVGComponentProps {
     theme?: "dark" | "light"
 }
 
+export type CustomSVGProps = Partial<Record<LogoKey, SVGComponentProps>>
+
 export type ProjectMapType = {
     id: string
     name: string
