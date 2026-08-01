@@ -25,6 +25,7 @@ import VercelLogo from "../components/svgs/logos/VercelLogo"
 import VsCodeLogo from "../components/svgs/logos/VsCodeLogo"
 import type { SVGComponentProps } from "../types/types"
 import type { CategorizedLogos, LogoCategories, LogoKey } from "../types/logosMapTypes"
+import ReactRouterLogo from "../components/svgs/logos/ReactRouterLogo"
 
 export const langLogos = {
     python: PythonLogo,
@@ -39,6 +40,7 @@ export const frontendLogos = {
     tailwind: TailwindLogo,
     html: HtmlLogo,
     css: CssLogo,
+    reactRouter: ReactRouterLogo,
 }
 
 export const backendLogos = {
