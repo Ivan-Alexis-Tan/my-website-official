@@ -1,24 +1,13 @@
+import { categorizedLogos, translateLogoCat } from "../../../helpers/logoMaps"
 import { 
-    backendLogoKeys, 
-    databaseLogoKeys, 
-    frontendLogoKeys, 
-    langLogoKeys, 
-    toolsLogoKeys, 
+    type LogoCategories, 
     type LogoKey
 } from "../../../types/logosMapTypes"
 
 import SkillsLogos from "../../helpers/SkillsLogos"
 
 export default function Sec3Skills() {
-    const devLogos = {
-        languages: mapLogo("Languages", langLogoKeys),
-        frontend: mapLogo("Frontend", frontendLogoKeys),
-        backend: mapLogo("Backend", backendLogoKeys),
-        databases: mapLogo("Databases", databaseLogoKeys),
-        tools: mapLogo("Tools", toolsLogoKeys),
-        dataTools: mapLogo("Data Tools", databaseLogoKeys),
-    }
-    const devLogoKeys = Object.keys(devLogos) as (keyof (typeof devLogos))[]
+    const devLogoKeys = Object.keys(categorizedLogos) as LogoCategories[]
 
     return (
         <div className="p-4">
@@ -36,22 +25,15 @@ export default function Sec3Skills() {
 
             {/* Skill Logos */}
             <div className="max-w-2xl mx-auto [&_svg]:h-15 [&_svg]:w-15">
-                {devLogoKeys.map(key => (
+                {devLogoKeys.map(cat => (
                     <SkillsLogos 
-                        title={devLogos[key].title} 
-                        logoKeys={devLogos[key].logo}
+                        title={translateLogoCat(cat)} 
+                        logoKeys={Object.keys(categorizedLogos[cat]) as LogoKey[]}
                         className="mb-5"
-                        key={key}
+                        key={cat}
                     />
                 ))}
             </div>
         </div>
     )
-}
-
-function mapLogo(
-    title: string, 
-    logo: LogoKey[],
-) {
-    return { title, logo }
 }
