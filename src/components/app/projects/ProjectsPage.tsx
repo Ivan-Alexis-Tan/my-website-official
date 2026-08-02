@@ -4,12 +4,14 @@ import { DisplayProject } from "../../../helpers/projectsDbHelpers";
 
 import ProjectSidebar from "./ProjectSidebar";
 import ProjectNavbar from "./ProjectNavbar";
+import ScrollToTop from "./ScrollToTop";
 
 export default function ProjectsPage() {
     const { id } = useParams()
 
     return (
         <div className="flex">
+            <ScrollToTop />
             <ProjectSidebar className="hidden sm:block" />
 
             <main className="flex-1 sm:mx-5">
