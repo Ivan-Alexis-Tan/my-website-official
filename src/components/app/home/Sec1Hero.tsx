@@ -1,11 +1,6 @@
 export default function Sec1Hero() {
     return (
-        <div className="p-4 gap-5 flex flex-col justify-between">
-            {/* Section Header */}
-            <div className="flex items-center gap-3">
-                <img src="/profile_icon_wht.png" width={50} height={50} alt="profile-icon" />
-                <h1 className="text-4xl font-bold text-(--text-h)">Profile</h1>
-            </div>
+        <div className="mb-5 p-4 gap-5 flex flex-col justify-between bg-(--accent-border) text-white rounded-2xl">
             
             {/* Profile Details */}
             <div className="flex flex-col sm:flex-row sm:gap-5 justify-center items-center">
@@ -14,8 +9,8 @@ export default function Sec1Hero() {
                 </div>
                 
                 <div className="flex flex-col items-center">
-                    <h2 className="text-3xl font-bold text-(--text-h) text-center">Juan Dela Cruz</h2>
-                    <p className="text-center">Full-stack Dev. | Web App Dev. | Data Analyst</p>
+                    <h2 className="text-3xl font-bold text-(--text-h) text-center">Ivan Alexis Tan</h2>
+                    <p className="text-center italic">Full-stack Dev. | Web App Dev. | Data Analyst</p>
                 </div>
             </div>
 

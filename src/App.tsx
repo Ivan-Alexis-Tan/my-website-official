@@ -9,10 +9,8 @@ import Sec4Projects from './components/app/home/Sec4Projects'
 function App() {
 
   return (
-    <main className='mx-10 [&>section]:border [&>section]:rounded-2xl [&>section]:mb-5'>
-      <section>
-        <Sec1Hero />
-      </section>
+    <main className='mx-10 my-5 [&>section]:mb-5 [&>section]:border [&>section]:rounded-2xl'>
+      <Sec1Hero />
 
       <section>
         <Sec2About />
