@@ -18,12 +18,12 @@ export default function ProjectLinkBtns({ liveDemoUrl, repoUrl, className }: Pro
                 </a>
             }
 
-            <a className="flex gap-1 items-center px-1 hover:bg-(--text) hover:text-(--bg) rounded-2xl"
+            <a className="flex gap-1 items-center px-1 hover:bg-(--text) hover:text-(--bg) hover:[&_svg]:text-(--bg) rounded-2xl"
                 href={repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <GitHubLogo className="w-4 h-4" />
+                <GitHubLogo className="w-4 h-4 text-white" />
                 <span>Repo</span>
             </a>
         </div>
