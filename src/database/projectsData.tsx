@@ -1,4 +1,5 @@
 import CompiledTutorialNotes from "../components/app/projects/featured/CompiledTutorialNotes";
+import MyWebsiteOfficial from "../components/app/projects/featured/MyWebsiteOfficial";
 import PersonalFinanceManager from "../components/app/projects/featured/PersonalFinanceManager";
 import StudentRecordsManager from "../components/app/projects/featured/StudentRecordsManager";
 
@@ -10,6 +11,7 @@ export const projectIds = [
     "personal-finance-manager",
     "student-records-manager",
     "compiled-tutorial-notes",
+    "my-website-official",
 ] as const 
 
 export const projectsMap: ProjectMapType[] = [
@@ -44,6 +46,17 @@ export const projectsMap: ProjectMapType[] = [
         liveDemoUrl: "https://tutorial-compiled-notes.vercel.app/",
         build: ["javascript", "react", "tailwind", "css", "vercel"],
         imgSrc: "/tutorial-notes-thumbnail.png",
+        class: "featured",
+    },
+    {
+        id: "my-website-official",
+        name: "My Website",
+        route: `${baseRoute}/my-website-official`,
+        component: MyWebsiteOfficial,
+        repoUrl: "https://github.com/Ivan-Alexis-Tan/my-website-official",
+        liveDemoUrl: "https://my-website-official.vercel.app/",
+        build: ["javascript", "typescript", "react", "tailwind", "css", "reactRouter", "vercel"],
+        imgSrc: "/my-website-thumbnail.png",
         class: "featured",
     },
 ];
