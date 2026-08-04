@@ -117,14 +117,19 @@ code {
 table {
   border-collapse: collapse;
 
-  tbody {
+  thead {
     th {
-      text-align: left;
+      background-color: var(--border);
+      color: var(--text-h);
     }
   }
 
+  tbody {
+    th { text-align: left; }
+  }
+
   th, td {
-    border: 1px solid;
     padding: 0.5rem 0.5rem;
+    border: 1px solid var(--border);
   }
 }
