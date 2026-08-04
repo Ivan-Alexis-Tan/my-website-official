@@ -47,7 +47,7 @@ export default function SidebarDrawer({
                     {pocketComponents.map(comp => (
                         <Link key={comp.name} 
                             to={comp.link}
-                            className={`${id === comp.id && "text-(--text-h) bg-(--border)"} pl-12 pr-3 flex flex-col py-1.5 hover:bg-(--border) cursor-pointer`}
+                            className={`${id === comp.id && "text-(--text-h) bg-(--border)"} mb-1 pl-12 pr-3 flex flex-col py-1.5 hover:bg-(--border) cursor-pointer`}
                         >
                             {comp.name}
                         </Link>
