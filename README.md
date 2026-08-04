@@ -1,75 +1,112 @@
-# React + TypeScript + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website built with React and TypeScript to showcase my projects, technical skills, and learning journey in software development.
 
-Currently, two official plugins are available:
+The website serves both as a portfolio for potential employers and as a demonstration of my frontend development skills through a responsive, component-based application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> 🌐 Live Demo:
+> <https://my-website-official.vercel.app/>
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Overview
 
-## Expanding the ESLint configuration
+The homepage introduces who I am, the technologies I work with, and a collection of projects that I've built throughout my learning journey.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Each project has its own dedicated page containing an overview, descriptions, technology stack, links to the source code, live demo (when available), and other relevant information.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Responsive design for desktop and mobile devices
+- Project showcase with dedicated project pages
+- Homepage sections for:
+  - Hero
+  - About
+  - Skills
+  - Projects
+- Sidebar navigation on desktop
+- Mobile-friendly navigation drawer
+- External links to GitHub repositories
+- External links to deployed projects (when available)
+- Dark-themed interface
+- Component-based architecture using React
 
+---
+
+## Tech Stack
+
+### Frontend
+
+- React 19
+- TypeScript
+- React Router
+- Tailwind CSS
+- Vite
+
+### Development
+
+- ESLint
+
+---
+
+## Routing
+
+| Route | Description |
+|--------|-------------|
+| `/` | Portfolio homepage |
+| `/projects/:projectId` | Individual project page |
+
+---
+
+## Running Locally
+
+Clone the repository
+
+```bash
+git clone https://github.com/Ivan-Alexis-Tan/my-website-official
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
+
+Start the development server
+
+```bash
+npm run dev
+```
+
+Create a production build
+
+```bash
+npm run build
+```
+
+Preview the production build
+
+```bash
+npm run preview
+```
+
+---
+
+## Future Improvements
+
+Some planned improvements include:
+
+- Resume download
+- Better light mode support
+- 404 page
+- Additional projects
+- Project categorization/filtering
+- Continuous UI improvements
+
+---
+
+## License
+
+No license has been specified for this project.
