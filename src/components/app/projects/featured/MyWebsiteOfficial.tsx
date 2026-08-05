@@ -7,8 +7,8 @@ export default function MyWebsiteOfficial({ className }: { className?: string })
     const project = getProject("my-website-official")
     return (
         <div className={`${className ?? ""} mb-5 *:mb-5 [&_h3]:text-xl [&_h3,&_h4]:font-bold [&_h3,&_h4]:text-(--text-h) [&_h3]:mb-2`}>
-            <div className="flex gap-2 items-center [&>h2]:text-3xl [&>h2]:font-bold">
-                <h2 className="text-(--text-h)">🌐 My Website</h2>
+            <div className="*:inline [&>h2]:text-3xl [&>h2]:font-bold">
+                <h2 className="text-(--text-h)">🌐 My Website </h2>
                 <h2>(This Website)</h2>
             </div>
 
