@@ -1,13 +1,19 @@
 import { useParams } from "react-router-dom";
 
+import type { ProjectId } from "../../../types/types";
+
 import { DisplayProject } from "../../../helpers/projectsDbHelpers";
+import { projectIds } from "../../../database/projectsData";
 
 import ProjectSidebar from "./ProjectSidebar";
 import ProjectNavbar from "./ProjectNavbar";
 import ScrollToTop from "./ScrollToTop";
+import NotFoundPage from "../../helpers/NotFoundPage";
 
 export default function ProjectsPage() {
     const { id } = useParams()
+
+    if (!projectIds.includes(id as ProjectId)) return <NotFoundPage />
 
     return (
         <div className="flex">
