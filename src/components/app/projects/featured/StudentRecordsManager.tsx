@@ -180,7 +180,7 @@ const DeploymentTech = () => {
             rowContents={[
                 ["Frontend", "Vercel"],
                 ["Backend", "Render"],
-                ["Database", "Railway"],
+                ["Database", "Neon (Vercel)"],
             ]}
         />
     )
