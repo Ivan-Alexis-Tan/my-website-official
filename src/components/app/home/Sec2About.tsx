@@ -13,13 +13,11 @@ export default function Sec2About() {
 
             {/* Section Contents */}
             <div className="[&>p]:mb-5">
-                <p>I am a software developer with a strong interest in backend development, data engineering, and artificial intelligence. I enjoy building applications that are practical, scalable, and designed with long-term maintainability in mind. My approach to software development goes beyond making features work—I like understanding how systems are designed, how different technologies interact, and why certain solutions are chosen over others.</p>
+                <p>I’m a full-stack developer focused on building practical web applications with React, Next.js, TypeScript, Python, and SQL databases. I enjoy working across the stack—from designing user interfaces and application logic to building APIs, managing databases, implementing authentication, and deploying applications.</p>
 
-                <p>Before transitioning into software development, I worked as a teacher. That experience strengthened my ability to communicate complex ideas clearly, solve problems methodically, and continuously learn new concepts. Those skills continue to shape how I design software and approach technical challenges.</p>
+                <p>Before transitioning into software development, I worked as a secondary school teacher, where I built software tools to automate repetitive tasks and solve problems in my own workflow. That experience led me to pursue software development more seriously and shaped my approach to building applications: understand the problem first, design a practical solution, and continuously improve it as I learn.</p>
 
-                <p>My recent work includes full-stack web applications built with React, Next.js, Python, and PostgreSQL, as well as projects involving authentication, database design, data visualization, and modern development workflows. As I continue to grow, my goal is to build reliable software that solves real-world problems while expanding my expertise in backend systems, cloud technologies, and AI engineering.</p>
-
-                <p>Outside of building software, I enjoy exploring topics in science, technology, philosophy, and psychology to better understand both complex systems and the way people think.</p>
+                <p>My current projects include full-stack applications involving authentication, database design, CRUD operations, data processing, and responsive interfaces. I’m particularly interested in growing as a full-stack developer while strengthening my knowledge of backend systems, software architecture, and modern web development.</p>
             </div>
         </div>
     )
