@@ -4,6 +4,7 @@ import Sec2About from './components/app/home/Sec2About'
 import Sec1Hero from './components/app/home/Sec1Hero'
 import Sec3Skills from './components/app/home/Sec3Skills'
 import Sec4Projects from './components/app/home/Sec4Projects'
+import Sec5ContactsAndLinks from './components/app/home/Sec5ContactsAndLinks'
 // import './App.css'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Sec4Projects />
       </section>
 
+      <Sec5ContactsAndLinks />
     </main>
   )
 }
