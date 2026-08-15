@@ -10,7 +10,7 @@ export default function Sec4Projects() {
     return (
         <div className="p-5">
             {/* Section Title */}
-            <div className="mb-5 flex justify-between items-center">
+            <div className="mb-5 gap-3 flex flex-wrap justify-between items-center">
                 <div className="flex items-center gap-3">
                     <svg width={40} height={40}>
                         <use href="/icons.svg#projects" />
@@ -24,7 +24,7 @@ export default function Sec4Projects() {
                     <svg className="w-5 h-5">
                         <use href="/icons.svg#read-more" />
                     </svg>
-                    <span>View all</span>
+                    <span>View All</span>
                 </Link>
             </div>
 
