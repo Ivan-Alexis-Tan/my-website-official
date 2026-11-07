@@ -7,29 +7,43 @@ import type { ProjectMapType } from "../types/types";
 
 const baseRoute = "/projects"
 
-export const projectIds = [
-    "personal-finance-manager",
-    "student-records-manager",
-    "compiled-tutorial-notes",
-    "my-website-official",
-] as const 
+const projectIdLib = {
+    1: "personal-finance-manager",
+    2: "student-records-manager",
+    3: "compiled-tutorial-notes",
+    4: "my-website-official",
+    5: "yt-karaoke-app",
+} as const
+
+export const projectIds = Object.values(projectIdLib)
 
 export const projectsMap: ProjectMapType[] = [
     {
-        id: "personal-finance-manager",
+        id: projectIdLib["5"],
+        name: "YT Karaoke App",
+        route: `${baseRoute}/${projectIdLib["5"]}`,
+        component: null,
+        repoUrl: "https://github.com/Ivan-Alexis-Tan/finance-manager-web-app",
+        liveDemoUrl: "https://finance-manager-web-app-puce.vercel.app/",
+        build: ["typescript", "nextjs", "authjs", "tailwind", "postgresql", "prisma", "vercel"],
+        imgSrc: `/${projectIdLib["5"]}-thumbnail.png`,
+        class: "featured",
+    },
+    {
+        id: projectIdLib["1"],
         name: "Personal Finance Manager",
-        route: `${baseRoute}/personal-finance-manager`,
+        route: `${baseRoute}/${projectIdLib["1"]}`,
         component: PersonalFinanceManager,
         repoUrl: "https://github.com/Ivan-Alexis-Tan/finance-manager-web-app",
         liveDemoUrl: "https://finance-manager-web-app-puce.vercel.app/",
         build: ["typescript", "nextjs", "authjs", "tailwind", "postgresql", "prisma", "vercel"],
-        imgSrc: "/personal-finance-manager-thumbnail.png",
+        imgSrc: `/${projectIdLib["1"]}-thumbnail.png`,
         class: "featured",
     },
     {
-        id: "student-records-manager",
+        id: projectIdLib["2"],
         name: "Student Records Manager",
-        route: `${baseRoute}/student-records-manager`,
+        route: `${baseRoute}/${projectIdLib["2"]}`,
         component: StudentRecordsManager,
         repoUrl: "https://github.com/Ivan-Alexis-Tan/student-records-manager/tree/master/frontend",
         liveDemoUrl: "https://student-records-manager-sand.vercel.app/",
@@ -38,25 +52,25 @@ export const projectsMap: ProjectMapType[] = [
         class: "featured",
     },
     {
-        id: "compiled-tutorial-notes",
+        id: projectIdLib["3"],
         name: "Compiled Tutorial Notes",
-        route: `${baseRoute}/compiled-tutorial-notes`,
+        route: `${baseRoute}/${projectIdLib["3"]}`,
         component: CompiledTutorialNotes,
         repoUrl: "https://github.com/Ivan-Alexis-Tan/tutorial-compiled-notes",
         liveDemoUrl: "https://tutorial-compiled-notes.vercel.app/",
         build: ["javascript", "react", "tailwind", "css", "vercel"],
         imgSrc: "/tutorial-notes-thumbnail.png",
-        class: "featured",
+        class: "others",
     },
     {
-        id: "my-website-official",
+        id: projectIdLib["4"],
         name: "My Website",
-        route: `${baseRoute}/my-website-official`,
+        route: `${baseRoute}/${projectIdLib["4"]}`,
         component: MyWebsiteOfficial,
         repoUrl: "https://github.com/Ivan-Alexis-Tan/my-website-official",
         liveDemoUrl: "https://my-website-official.vercel.app/",
         build: ["javascript", "typescript", "react", "tailwind", "css", "reactRouter", "vercel"],
         imgSrc: "/my-website-thumbnail.png",
-        class: "featured",
+        class: "others",
     },
 ];
