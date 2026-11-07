@@ -12,6 +12,7 @@ export default function ProjectSidebar({ className }: { className?: string}) {
     const [fullSidebar, setFullSidebar] = useState<boolean>(true)
 
     const featuredProjects = searchProject("class", "featured")
+    const otherProjects = searchProject("class", "others")
 
     const ClosedSidebarIcon = ({ svgIcon }: { svgIcon: React.ReactNode }) => {
         return (
@@ -45,11 +46,11 @@ export default function ProjectSidebar({ className }: { className?: string}) {
                     className="mb-5"
                 />
 
-                {/* <SidebarDrawer drawerName="Others"
-                    pocketComponents={["Test 1", "Test 2"]}
+                <SidebarDrawer drawerName="Others"
+                    pocketComponents={projectRoutes(otherProjects)}
                     drawerIcon={<svg><use href="/icons.svg#projects" /></svg>}
                     className="mb-5"
-                /> */}
+                />
             </header>
         )
         : (
