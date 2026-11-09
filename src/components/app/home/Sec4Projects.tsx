@@ -1,7 +1,11 @@
+// Next.js
 import { Link } from "react-router-dom";
 
+// Helpers functions, etc.
 import { searchProject } from "../../../helpers/projectsDbHelpers";
+import { projectIdLib } from "../../../data/projectsData";
 
+// Components
 import ProjectCard from "../../helpers/ProjectCard";
 
 export default function Sec4Projects() {
@@ -18,7 +22,8 @@ export default function Sec4Projects() {
                     <h1 className="text-4xl font-bold text-(--text-h)">Projects</h1>
                 </div>
             
-                <Link to={"/projects/personal-finance-manager"}
+                {/* View all button */}
+                <Link to={`/projects/${projectIdLib["5"]}`}
                     className="gap-1 flex items-center hover:text-(--accent)"
                 >
                     <svg className="w-5 h-5">
@@ -28,6 +33,7 @@ export default function Sec4Projects() {
                 </Link>
             </div>
 
+            {/* Projects and Project Cards */}
             <h2 className="text-2xl font-bold text-(--text-h) mb-2">Featured:</h2>
             <div className="mb-5 mx-auto gap-5 flex flex-wrap justify-center">
                 {featuredProjects.map(proj => (

@@ -7,8 +7,9 @@ import YtKaraokeApp from "../components/app/projects/featured/YtKaraokeApp";
 import type { ProjectMapType } from "../types/types";
 
 const baseRoute = "/projects"
+const projectImgRoute = "/project-img"
 
-const projectIdLib = {
+export const projectIdLib = {
     1: "personal-finance-manager",
     2: "student-records-manager",
     3: "compiled-tutorial-notes",
@@ -27,7 +28,7 @@ export const projectsMap: ProjectMapType[] = [
         repoUrl: "https://github.com/Ivan-Alexis-Tan/finance-manager-web-app",
         liveDemoUrl: "https://yt-karaoke-app-frontend-nine.vercel.app/",
         build: ["typescript", "nextjs", "authjs", "tailwind", "postgresql", "python", "fastapi", "sqlalchemy", "vercel"],
-        imgSrc: `/${projectIdLib["5"]}-thumbnail.png`,
+        imgSrc: `${projectImgRoute}/${projectIdLib["5"]}/thumbnail.png`,
         class: "featured",
     },
     {
