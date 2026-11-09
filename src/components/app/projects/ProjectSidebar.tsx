@@ -9,21 +9,25 @@ import IconBookmarkStar from "../../svgs/icons/IconBookmarkStar";
 import SidebarDrawer from "./SidebarDrawer";
 
 export default function ProjectSidebar({ className }: { className?: string}) {
+    // Function: Project sidebar UI to display on projects page
+
     const [fullSidebar, setFullSidebar] = useState<boolean>(true)
 
     const featuredProjects = searchProject("class", "featured")
     const otherProjects = searchProject("class", "others")
 
-    const ClosedSidebarIcon = ({ svgIcon }: { svgIcon: React.ReactNode }) => {
+    const ClosedSidebarIcon = ({ children }: { children: React.ReactNode }) => {
+        // An Icon button to click and display when projects sidebar is closed
         return (
-            <div onClick={_ => setFullSidebar(true)}>
-                {svgIcon}
-            </div>
+            <button onClick={_ => setFullSidebar(true)}>
+                {children}
+            </button>
         )
     }
 
     return fullSidebar 
         ? (
+            // Opened Sidebar UI
             <header className={`${className ?? ""} w-50 h-screen sticky top-0 left-0 self-start
                                [&_svg]:w-7 [&_svg]:h-7 [&_svg]:text-(--text-h) border-r-2 border-(--border)`}
             >
@@ -54,6 +58,7 @@ export default function ProjectSidebar({ className }: { className?: string}) {
             </header>
         )
         : (
+            // Closed Sidebar UI
             <header className={`${className ?? ""} w-15 h-screen gap-3 sticky top-0 left-0 self-start sm:flex flex-col items-center
                 [&_svg]:w-7 [&_svg]:h-7 [&_svg]:text-(--text-h) [&_svg]:hover:text-(--accent) border-r-2 border-(--border)`}
             >
@@ -69,7 +74,18 @@ export default function ProjectSidebar({ className }: { className?: string}) {
 
                 <hr className="w-10" />
 
-                <ClosedSidebarIcon svgIcon={<IconBookmarkStar />} />
+                {/* Featured Projects */}
+                <ClosedSidebarIcon>
+                    <IconBookmarkStar title="Featured Projects" />
+                </ClosedSidebarIcon>
+
+                {/* Other Projects */}
+                <ClosedSidebarIcon>
+                    <svg>
+                        <title>Other Projects</title>
+                        <use href="/icons.svg#projects" />
+                    </svg>
+                </ClosedSidebarIcon>
             </header>
         )
 }
