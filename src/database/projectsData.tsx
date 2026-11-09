@@ -2,6 +2,7 @@ import CompiledTutorialNotes from "../components/app/projects/featured/CompiledT
 import MyWebsiteOfficial from "../components/app/projects/featured/MyWebsiteOfficial";
 import PersonalFinanceManager from "../components/app/projects/featured/PersonalFinanceManager";
 import StudentRecordsManager from "../components/app/projects/featured/StudentRecordsManager";
+import YtKaraokeApp from "../components/app/projects/featured/YtKaraokeApp";
 
 import type { ProjectMapType } from "../types/types";
 
@@ -22,10 +23,10 @@ export const projectsMap: ProjectMapType[] = [
         id: projectIdLib["5"],
         name: "YT Karaoke App",
         route: `${baseRoute}/${projectIdLib["5"]}`,
-        component: null,
+        component: YtKaraokeApp,
         repoUrl: "https://github.com/Ivan-Alexis-Tan/finance-manager-web-app",
-        liveDemoUrl: "https://finance-manager-web-app-puce.vercel.app/",
-        build: ["typescript", "nextjs", "authjs", "tailwind", "postgresql", "prisma", "vercel"],
+        liveDemoUrl: "https://yt-karaoke-app-frontend-nine.vercel.app/",
+        build: ["typescript", "nextjs", "authjs", "tailwind", "postgresql", "python", "fastapi", "sqlalchemy", "vercel"],
         imgSrc: `/${projectIdLib["5"]}-thumbnail.png`,
         class: "featured",
     },
