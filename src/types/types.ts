@@ -1,5 +1,5 @@
 import type { ComponentType } from "react"
-import type { projectIds } from "../database/projectsData"
+import type { projectIds } from "../data/projectsData"
 import type { LogoKey } from "./logosMapTypes"
 
 export interface ComponentAndName {

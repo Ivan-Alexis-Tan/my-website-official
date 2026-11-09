@@ -1,4 +1,4 @@
-import { projectsMap } from "../database/projectsData"
+import { projectsMap } from "../data/projectsData"
 
 import type { ProjectId, ProjectMapType, SVGComponentProps } from "../types/types"
 

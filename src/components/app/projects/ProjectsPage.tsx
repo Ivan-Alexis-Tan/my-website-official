@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import type { ProjectId } from "../../../types/types";
 
 import { DisplayProject } from "../../../helpers/projectsDbHelpers";
-import { projectIds } from "../../../database/projectsData";
+import { projectIds } from "../../../data/projectsData";
 
 import ProjectSidebar from "./ProjectSidebar";
 import ProjectNavbar from "./ProjectNavbar";
