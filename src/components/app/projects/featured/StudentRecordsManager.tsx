@@ -4,9 +4,8 @@ import { useState } from "react"
 import { capitalize } from "../../../../helpers/generalHelpers"
 import { getProject } from "../../../../helpers/projectsDbHelpers"
 
-import ProjectBuild from "../../../helpers/ProjectBuildIcons"
-import ProjectLinkBtns from "../../../helpers/ProjectLinks"
 import TableComponent from "../../../helpers/TableComponent"
+import ProjectContentsContainer from "../../../helpers/ProjectContentsContainer"
 
 const techIds = ["frontend", "backend",  "devTools", "deployment"] as const
 type techIdType = typeof techIds[number]
@@ -16,29 +15,21 @@ export default function StudentRecordsManager({ className }: { className?: strin
     const project = getProject("student-records-manager")
 
     return (
-        <div className={`${className ?? ""} mb-5 *:mb-5 [&_h3]:text-xl [&_h3,&_h4]:font-bold [&_h3,&_h4]:text-(--text-h) [&_h3]:mb-2`}>
-            <h2 className="text-3xl font-bold text-(--text-h)">📚 Student Records Manager</h2>
-
-            <div className="mb-5">
-                <ProjectLinkBtns 
-                    liveDemoUrl={project.liveDemoUrl}
-                    repoUrl={project.repoUrl}
-                    className="mb-3"
-                /> 
-                <ProjectBuild build={project.build} />
-            </div>
-            <hr />
-
+        <ProjectContentsContainer
+            projectTitle="Student Records Manager"
+            projectDetails={project}
+            className={className}
+        >
             <div>
                 <h3>Why I Built This?</h3>
                 
-                <div className="pl-10">
+                <ul>
                     <li>For real classroom use.</li>
                     <li>From inefficient manual grade tracking though Excel.</li>
                     <li>Upgraded to Django UI, but was only bare and strictly for grade computations only.</li>
                     <li>Currently: the proper rebuild, role-based access and with modern frontend UI</li>
                     <li>To make grade recording online and accessible both students and teachers.</li>
-                </div>
+                </ul>
             </div>
 
             <div>
@@ -128,7 +119,7 @@ export default function StudentRecordsManager({ className }: { className?: strin
                     <li>HTTP-only cookies</li>
                 </div>
             </div>
-        </div>
+        </ProjectContentsContainer>
     )
 }
 

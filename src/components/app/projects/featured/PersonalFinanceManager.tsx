@@ -1,40 +1,27 @@
 import { getProject } from "../../../../helpers/projectsDbHelpers";
 
-import ProjectBuild from "../../../helpers/ProjectBuildIcons";
-import ProjectLinkBtns from "../../../helpers/ProjectLinks";
+import ProjectContentsContainer from "../../../helpers/ProjectContentsContainer";
 import CategorizedTechStack from "../CategorizedTechStack";
 
 export default function PersonalFinanceManager({ className }: { className?: string }) {
     const project = getProject("personal-finance-manager")
     
     return (
-        <div className={`${className ?? ""} mb-5 *:mb-5 [&_h3]:text-xl [&_h3,&_h4]:font-bold [&_h3,&_h4]:text-(--text-h) [&_h3]:mb-2`}>
-            <h2 className="text-3xl font-bold text-(--text-h)">
-                💳 Personal Finance Manager Web App
-            </h2>
-
-            <div className="mb-5">
-                <ProjectLinkBtns 
-                    liveDemoUrl={project.liveDemoUrl}
-                    repoUrl={project.repoUrl}
-                    className="mb-3"
-                />
-                <ProjectBuild 
-                    build={project.build} 
-                    logoProps={{ 
-                        nextjs: { className: "w-13!" },
-                        postgresql: { className: "w-17!" },
-                        vercel: { className: "w-15!" },
-                    }}
-                />
-            </div>
-            <hr />
-
+        <ProjectContentsContainer
+            projectTitle="Personal Finance Manager Web App"
+            projectDetails={project}
+            buildCustomStyle={{ 
+                nextjs: { className: "w-13!" },
+                postgresql: { className: "w-17!" },
+                vercel: { className: "w-15!" },
+            }}
+            className={className}
+        >
             <p>A full-stack web application for recording and managing personal financial transactions. The application allows users to securely sign in, record income and expense transactions individually or in bulk, and efficiently search and organize financial records.</p>
 
             <div>
                 <h3>Why I Built This</h3>
-                <ul className="[&>li]:ml-10 [&>li]:list-disc">
+                <ul>
                     <li>For personal finance tracking</li>
                     <li>Making the recorder online for accessibility</li>
                     <li>More reliable and personalized recording system than in Excel</li>
@@ -46,7 +33,7 @@ export default function PersonalFinanceManager({ className }: { className?: stri
 
             <div>
                 <h3>Features</h3>
-                <ul className="[&>li]:ml-10 [&>li]:list-disc">
+                <ul>
                     <li>Secure authentication with Google and GitHub (OAuth)</li>
                     <li>Record income and expense transactions</li>
                     <li>Create multiple transactions in a single submission (bulk entry)</li>
@@ -96,7 +83,7 @@ export default function PersonalFinanceManager({ className }: { className?: stri
             <div>
                 <h3>What I Learned</h3>
                 
-                <ul className="[&>li]:ml-10 [&_li]:list-disc">
+                <ul>
                     <li>The general Next.js environment</li>
                     <li>Responsive design and layout</li>
                     <li>More Typescript concepts</li>
@@ -111,6 +98,6 @@ export default function PersonalFinanceManager({ className }: { className?: stri
                     <li>PostgreSQL ORM process</li>
                 </ul>
             </div>
-        </div>
+        </ProjectContentsContainer>
     )
 }
