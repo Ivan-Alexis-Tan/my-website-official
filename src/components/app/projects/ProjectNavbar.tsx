@@ -14,6 +14,7 @@ export default function ProjectNavbar({ className }: { className?: string }) {
     const [showProj, setShowProj] = useState<boolean>(false)
 
     const featured = searchProject("class", "featured")
+    const otherProjects = searchProject("class", "others")
 
     useEffect(() => {
         setShowProj(false)
@@ -63,6 +64,12 @@ export default function ProjectNavbar({ className }: { className?: string }) {
                             drawerIcon={<IconBookmarkStar />}
                             pocketComponents={projectRoutes(featured)}
                             className="[&_svg]:w-10 [&_svg]:h-10"
+                        />
+
+                        <SidebarDrawer drawerName="Others"
+                            pocketComponents={projectRoutes(otherProjects)}
+                            drawerIcon={<svg><use href="/icons.svg#projects" /></svg>}
+                            className="mb-5"
                         />
                     </div>
                 </div>
