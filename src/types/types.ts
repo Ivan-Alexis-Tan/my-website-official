@@ -1,6 +1,17 @@
+// Next.js
 import type { ComponentType } from "react"
-import type { projectIds } from "../data/projectsData"
+
+// App data
+import type { projectIds } from "../data/projectIds"
+
+// Types
 import type { LogoKey } from "./logosMapTypes"
+
+export interface ProjectImgUrls {
+    // Project image mapping type
+    src: string
+    caption?: string
+}
 
 export interface ComponentAndName {
     name: string
