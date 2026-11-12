@@ -1,14 +1,20 @@
+// Data variables, helper functions, etc.
 import { getProject } from "../../../../helpers/projectsDbHelpers"
+import { projectIdLib } from "../../../../data/projectIds"
+import { YtKaraokeImgUrls } from "../../../../data/imgUrlsYtKaraokeApp"
 
+// Components 
 import ProjectContentsContainer from "../../../helpers/ProjectContentsContainer"
 import CategorizedTechStack from "../CategorizedTechStack"
+import ImageCarousel from "../../../helpers/ImageCarousel"
 
 type YtKaraokeAppProps = {
     className?: string
 }
 
 export default function YtKaraokeApp({ className }: YtKaraokeAppProps) {
-    const project = getProject("yt-karaoke-app")
+    const projectId = projectIdLib["5"]
+    const project = getProject(projectId)
 
     return (
         <ProjectContentsContainer projectTitle="YT Karaoke App" 
@@ -25,6 +31,9 @@ export default function YtKaraokeApp({ className }: YtKaraokeAppProps) {
 
                 <p>The application supports both local database searches and direct YouTube searches, allowing users to find songs that haven't yet been stored in the application's database. It also includes user authentication, role-based access, and an administrative moderation system for managing videos and channels.</p>
             </div>
+
+            {/* Project image gallery */}
+            <ImageCarousel imgUrls={YtKaraokeImgUrls} />
 
             <div>
                 <h3>Features</h3>
@@ -84,7 +93,7 @@ export default function YtKaraokeApp({ className }: YtKaraokeAppProps) {
                 <h3>Challenges and Learning</h3>
 
                 <ul>
-                    <li>Using external API (YouTube Data API v3).</li>
+                    <li>Utilizing external API (YouTube Data API v3).</li>
                     <li>Processing external API then storing it to app's database.</li>
                     <li>Make Next.js frontend communicate JWT authentication to FastAPI backend.</li>
                     <li>Designing moderation system of what YouTube videos to inlclude in the app.</li>
