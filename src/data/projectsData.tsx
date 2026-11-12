@@ -1,23 +1,18 @@
+// App data
+import { projectIdLib } from "./projectIds";
+
+// Types
+import type { ProjectMapType } from "../types/types";
+
+// Components
 import CompiledTutorialNotes from "../components/app/projects/featured/CompiledTutorialNotes";
 import MyWebsiteOfficial from "../components/app/projects/featured/MyWebsiteOfficial";
 import PersonalFinanceManager from "../components/app/projects/featured/PersonalFinanceManager";
 import StudentRecordsManager from "../components/app/projects/featured/StudentRecordsManager";
 import YtKaraokeApp from "../components/app/projects/featured/YtKaraokeApp";
 
-import type { ProjectMapType } from "../types/types";
-
 const baseRoute = "/projects"
 const projectImgRoute = "/project-img"
-
-export const projectIdLib = {
-    1: "personal-finance-manager",
-    2: "student-records-manager",
-    3: "compiled-tutorial-notes",
-    4: "my-website-official",
-    5: "yt-karaoke-app",
-} as const
-
-export const projectIds = Object.values(projectIdLib)
 
 export const projectsMap: ProjectMapType[] = [
     {
