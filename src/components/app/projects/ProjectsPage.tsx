@@ -27,7 +27,7 @@ export default function ProjectsPage() {
             <ScrollToTop />
             <ProjectSidebar className="hidden sm:block" />
 
-            <main className="flex-1 sm:mx-5">
+            <main className="flex-1 min-w-0 sm:mx-5">
                 {/* Burger Menu and Popup Navbar Window in small viewports, is hidden otherwise */}
                 <ProjectNavbar className="proj-navbar px-5 py-2 mb-5 sticky top-0 left-0 sm:hidden bg-(--bg) b" />
 
