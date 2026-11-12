@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 // Helpers functions, etc.
 import { searchProject } from "../../../helpers/projectsDbHelpers";
-import { projectIdLib } from "../../../data/projectsData";
 
 // Components
 import ProjectCard from "../../helpers/ProjectCard";
+import { projectIdLib } from "../../../data/projectIds";
 
 export default function Sec4Projects() {
     const featuredProjects = searchProject("class", "featured")

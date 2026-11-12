@@ -1,16 +1,23 @@
+// Next.js imports
 import { useParams } from "react-router-dom";
 
+// Types
 import type { ProjectId } from "../../../types/types";
 
+// Helper functions, necessary data, etc.
 import { DisplayProject } from "../../../helpers/projectsDbHelpers";
-import { projectIds } from "../../../data/projectsData";
+import { projectIds } from "../../../data/projectIds";
 
+// Components
 import ProjectSidebar from "./ProjectSidebar";
 import ProjectNavbar from "./ProjectNavbar";
 import ScrollToTop from "./ScrollToTop";
 import NotFoundPage from "../../helpers/NotFoundPage";
 
 export default function ProjectsPage() {
+    // Function: Project Page 
+    // URL: "/projects/[projectId]"
+
     const { id } = useParams()
 
     if (!projectIds.includes(id as ProjectId)) return <NotFoundPage />
