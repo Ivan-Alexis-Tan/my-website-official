@@ -1,5 +1,6 @@
-// App data
+// App data and helper functions
 import { projectIdLib } from "./projectIds";
+import { mapDateCreated } from "../helpers/generalHelpers";
 
 // Types
 import type { ProjectMapType } from "../types/types";
@@ -18,6 +19,8 @@ export const projectsMap: ProjectMapType[] = [
     {
         id: projectIdLib["5"],
         name: "YT Karaoke App",
+        dateCreated: mapDateCreated(new Date(2026, 8 - 1, 4)),
+        deploymentDate: new Date(2026, 9 - 1, 21),
         route: `${baseRoute}/${projectIdLib["5"]}`,
         component: YtKaraokeApp,
         repoUrl: "https://github.com/Ivan-Alexis-Tan/finance-manager-web-app",
@@ -30,6 +33,8 @@ export const projectsMap: ProjectMapType[] = [
         id: projectIdLib["1"],
         name: "Personal Finance Manager",
         route: `${baseRoute}/${projectIdLib["1"]}`,
+        dateCreated: mapDateCreated(new Date(2026, 4 - 1, 16)),
+        deploymentDate: new Date(2026, 8 - 1, 5),
         component: PersonalFinanceManager,
         repoUrl: "https://github.com/Ivan-Alexis-Tan/finance-manager-web-app",
         liveDemoUrl: "https://finance-manager-web-app-puce.vercel.app/",
@@ -40,6 +45,8 @@ export const projectsMap: ProjectMapType[] = [
     {
         id: projectIdLib["2"],
         name: "Student Records Manager",
+        dateCreated: mapDateCreated(new Date(2026, 2 - 1, 4)),
+        deploymentDate: new Date(2026, 4 - 1, 5),
         route: `${baseRoute}/${projectIdLib["2"]}`,
         component: StudentRecordsManager,
         repoUrl: "https://github.com/Ivan-Alexis-Tan/student-records-manager/tree/master/frontend",
@@ -51,6 +58,8 @@ export const projectsMap: ProjectMapType[] = [
     {
         id: projectIdLib["3"],
         name: "Compiled Tutorial Notes",
+        dateCreated: mapDateCreated(new Date(2026, 5 - 1, 24)),
+        deploymentDate: new Date(2026, 6 - 1, 13),
         route: `${baseRoute}/${projectIdLib["3"]}`,
         component: CompiledTutorialNotes,
         repoUrl: "https://github.com/Ivan-Alexis-Tan/tutorial-compiled-notes",
@@ -62,6 +71,8 @@ export const projectsMap: ProjectMapType[] = [
     {
         id: projectIdLib["4"],
         name: "My Website",
+        dateCreated: mapDateCreated(new Date(2026, 7 - 1, 13)),
+        deploymentDate: new Date('2026/07/28'),
         route: `${baseRoute}/${projectIdLib["4"]}`,
         component: MyWebsiteOfficial,
         repoUrl: "https://github.com/Ivan-Alexis-Tan/my-website-official",

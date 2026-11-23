@@ -29,6 +29,11 @@ export type CustomSVGProps = Partial<Record<LogoKey, SVGComponentProps>>
 export type ProjectMapType = {
     id: string
     name: string
+    dateCreated: {
+        from: Date,
+        until: Date | string
+    }
+    deploymentDate: Date | null
     route: string
     component: ComponentType<Pick<SVGComponentProps, "className">> | null
     repoUrl: string
