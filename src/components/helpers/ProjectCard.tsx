@@ -5,7 +5,10 @@ import type { ProjectMapType } from "../../types/types"
 import ProjectLinkBtns from "./ProjectLinks"
 import ProjectBuild from "./ProjectBuildIcons"
 
-type ProjectCardProp = Omit<ProjectMapType, "component" | "class" | "id" | "name"> & {
+type ProjectCardProp = Pick<
+    ProjectMapType, 
+    "imgSrc" | "build" | "route" | "repoUrl" | "liveDemoUrl" 
+> & {
     title: ProjectMapType["name"]
     className?: string
 }
