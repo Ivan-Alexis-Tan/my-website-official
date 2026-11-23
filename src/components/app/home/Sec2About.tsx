@@ -8,7 +8,7 @@ export default function Sec2About() {
                     <use href="/icons.svg#info-icon" />
                 </svg>
 
-                <h1 className="text-4xl font-bold text-(--text-h)">About</h1>
+                <h1 className="text-4xl font-bold text-(--text-h)">About Me</h1>
             </div>
 
             {/* Section Contents */}

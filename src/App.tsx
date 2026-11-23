@@ -10,7 +10,7 @@ import Sec5ContactsAndLinks from './components/app/home/Sec5ContactsAndLinks'
 function App() {
 
   return (
-    <main className='mx-10 my-5 [&>section]:mb-5 [&>section]:border [&>section]:rounded-2xl'>
+    <main className='max-w-250 mx-auto px-10 my-5 [&>section]:mb-5 [&>section]:border [&>section]:rounded-2xl'>
       <Sec1Hero />
 
       <section>
