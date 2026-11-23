@@ -4,11 +4,12 @@ import type { CustomSVGProps, ProjectMapType } from "../../types/types";
 export type ProjectBuildProps = { 
     build: ProjectMapType["build"]
     logoProps?: CustomSVGProps
+    className?: string
 }
 
-export default function ProjectBuild({ build, logoProps }: ProjectBuildProps) {
+export default function ProjectBuild({ build, logoProps, className }: ProjectBuildProps) {
     return (
-        <div className="flex flex-wrap gap-2 items-center [&_svg]:w-5 [&_svg]:h-5">
+        <div className={`${className ?? ""} flex flex-wrap gap-2 items-center [&_svg]:w-5 [&_svg]:h-5`}>
             <div className="flex gap-1 items-center">
                 <svg width={20} height={20}><use href="/icons.svg#handy-man"/></svg>
                 <span><i>Build:</i></span>
