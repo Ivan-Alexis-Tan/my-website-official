@@ -10,11 +10,6 @@ export default function PersonalFinanceManager({ className }: { className?: stri
         <ProjectContentsContainer
             projectTitle="Personal Finance Manager Web App"
             projectDetails={project}
-            buildCustomStyle={{ 
-                nextjs: { className: "w-13!" },
-                postgresql: { className: "w-17!" },
-                vercel: { className: "w-15!" },
-            }}
             className={className}
         >
             <p>A full-stack web application for recording and managing personal financial transactions. The application allows users to securely sign in, record income and expense transactions individually or in bulk, and efficiently search and organize financial records.</p>

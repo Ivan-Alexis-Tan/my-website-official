@@ -41,7 +41,13 @@ export default function ProjectContentsContainer({ children, projectTitle, proje
 
                 <ProjectBuild
                     build={build}
-                    logoProps={buildCustomStyle}
+                    logoProps={{
+                        mysql: { className: "w-8! h-8!" },
+                        vercel: { className: "w-13!" },
+                        nextjs: { className: "w-13!" },
+                        postgresql: { className: "w-17!" },
+                        sqlalchemy: { className: "w-10! h-10!" }
+                    }}
                 />
             </div>
 

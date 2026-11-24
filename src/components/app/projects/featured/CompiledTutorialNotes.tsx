@@ -15,9 +15,6 @@ export default function CompiledTutorialNotes({ className }: CompiledTutorialNot
             projectTitle="Compiled Tutorial Notes"
             projectDetails={project}
             className={className}
-            buildCustomStyle={{
-                vercel: { className: "w-10!" }
-            }}
         >
             <div className="flex flex-col gap-3">
                 <p>A personal web application that serves as my compiled web development notes.</p>

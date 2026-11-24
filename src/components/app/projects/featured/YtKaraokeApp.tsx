@@ -19,11 +19,6 @@ export default function YtKaraokeApp({ className }: YtKaraokeAppProps) {
     return (
         <ProjectContentsContainer projectTitle="YT Karaoke App" 
             projectDetails={project}
-            buildCustomStyle={{
-                vercel: { className: "w-15!" },
-                postgresql: { className: "w-15!" },
-                sqlalchemy: { className: "w-10! h-10!" }
-            }}
             className={className ?? ""}
         >
             <div className="flex flex-col gap-3">
